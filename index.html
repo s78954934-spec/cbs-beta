@@ -561,14 +561,33 @@ firebase.initializeApp(FC);
 const auth=firebase.auth(),db=firebase.firestore(),gp=new firebase.auth.GoogleAuthProvider();
 let CU=null,UP=null,selLang_='en',selLv_=0,confirmResult=null;
 
+// Handle Google redirect result
 auth.getRedirectResult().then(async result=>{
-  if(result&&result.user){CU=result.user;const d=await db.collection('users').doc(CU.uid).get();if(d.exists){UP=d.data();afterLogin();}else{showPage('setup');document.getElementById('bnav').style.display='none';}}
-}).catch(e=>{console.log('Redirect:',e);});
+  if(result&&result.user){
+    CU=result.user;
+    const d=await db.collection('users').doc(CU.uid).get();
+    if(d.exists){UP=d.data();afterLogin();}
+    else{showPage('setup');document.getElementById('bnav').style.display='none';}
+  }
+}).catch(e=>{console.log('Redirect result:',e);});
 
-let authResolved=false;
+// Auth state listener — only fires once on page load
+let authInitDone=false;
 auth.onAuthStateChanged(async u=>{
-  if(u&&!authResolved){authResolved=true;CU=u;const d=await db.collection('users').doc(u.uid).get();if(d.exists){UP=d.data();afterLogin();}else{showPage('setup');document.getElementById('bnav').style.display='none';}}
-  else if(!u&&!authResolved){authResolved=true;const isGuest=UP&&UP.name==='Guest';if(!isGuest){showPage('login');document.getElementById('bnav').style.display='none';}}
+  if(authInitDone)return;
+  authInitDone=true;
+  if(u){
+    CU=u;
+    try{
+      const d=await db.collection('users').doc(u.uid).get();
+      if(d.exists){UP=d.data();afterLogin();}
+      else{showPage('setup');document.getElementById('bnav').style.display='none';}
+    }catch(e){showPage('login');}
+  } else {
+    // No logged-in user — show login page
+    showPage('login');
+    document.getElementById('bnav').style.display='none';
+  }
 });
 
 let authMode='login';
@@ -582,25 +601,36 @@ function switchTab(mode){
 }
 
 async function doAuth(){
-  const email=document.getElementById('authEmail').value.trim(),pass=document.getElementById('authPass').value.trim(),name=document.getElementById('authName').value.trim(),errEl=document.getElementById('authError'),btn=document.getElementById('authBtn');
-  if(!email||!pass){errEl.textContent='Please enter email and password!';errEl.style.display='block';return;}
-  if(authMode==='signup'&&!name){errEl.textContent='Please enter your name!';errEl.style.display='block';return;}
-  btn.textContent='Please wait...';btn.disabled=true;errEl.style.display='none';
+  const email=document.getElementById("authEmail").value.trim();
+  const pass=document.getElementById("authPass").value.trim();
+  const name=document.getElementById("authName").value.trim();
+  const errEl=document.getElementById("authError");
+  const btn=document.getElementById("authBtn");
+  if(!email||!pass){errEl.textContent="Please enter email and password!";errEl.style.display="block";return;}
+  if(authMode==="signup"&&!name){errEl.textContent="Please enter your name!";errEl.style.display="block";return;}
+  btn.textContent="Please wait...";btn.disabled=true;errEl.style.display="none";
   try{
-    if(authMode==='login'){await auth.signInWithEmailAndPassword(email,pass);}
-    else{const r=await auth.createUserWithEmailAndPassword(email,pass);await r.user.updateProfile({displayName:name});}
+    let user;
+    if(authMode==="login"){const r=await auth.signInWithEmailAndPassword(email,pass);user=r.user;}
+    else{const r=await auth.createUserWithEmailAndPassword(email,pass);await r.user.updateProfile({displayName:name});user=r.user;}
+    CU=user;
+    const d=await db.collection("users").doc(user.uid).get();
+    if(d.exists){UP=d.data();afterLogin();}
+    else{showPage("setup");document.getElementById("bnav").style.display="none";}
   }catch(e){
-    btn.textContent=authMode==='login'?'Sign In':'Create Account';btn.disabled=false;
-    const msgs={'auth/user-not-found':'Email not registered. Create an account first!','auth/wrong-password':'Incorrect password!','auth/email-already-in-use':'Email already registered. Sign in instead!','auth/weak-password':'Password must be at least 6 characters!','auth/invalid-email':'Please enter a valid email!','auth/invalid-credential':'Incorrect email or password!'};
-    errEl.textContent=msgs[e.code]||'Error: '+e.message;errEl.style.display='block';
+    btn.textContent=authMode==="login"?"Sign In":"Create Account";btn.disabled=false;
+    const msgs={"auth/user-not-found":"Email not registered!","auth/wrong-password":"Wrong password!","auth/email-already-in-use":"Email already used!","auth/weak-password":"Password 6+ chars needed!","auth/invalid-email":"Invalid email!","auth/invalid-credential":"Wrong email or password!"};
+    errEl.textContent=msgs[e.code]||"Error: "+e.message;errEl.style.display="block";
   }
 }
 
 async function gLogin(){
-  try{await auth.signInWithPopup(gp);}
-  catch(e){
+  try{
+    const r=await auth.signInWithPopup(gp);
+    if(r.user){CU=r.user;const d=await db.collection("users").doc(CU.uid).get();if(d.exists){UP=d.data();afterLogin();}else{showPage("setup");document.getElementById("bnav").style.display="none";}}
+  }catch(e){
     try{await auth.signInWithRedirect(gp);}
-    catch(e2){document.getElementById('authError').textContent='Google login failed. Try email login.';document.getElementById('authError').style.display='block';}
+    catch(e2){document.getElementById("authError").textContent="Google login failed. Try email instead.";document.getElementById("authError").style.display="block";}
   }
 }
 
@@ -1059,10 +1089,4 @@ sql:[
 bash:[
 {q:"Show current directory?",opts:["cd","ls","pwd","dir"],ans:2,diff:"easy"},
 {q:"List files?",opts:["list","show","ls","dir"],ans:2,diff:"easy"},
-{q:"Create a new folder?",opts:["createdir","mkdir","newdir","makedir"],ans:1,diff:"easy"},
-{q:"View file content?",opts:["show","read","cat","open"],ans:2,diff:"easy"},
-{q:"Bash comment syntax?",opts:["// comment","/* */","# comment","-- comment"],ans:2,diff:"easy"},
-{q:"Delete a file?",opts:["del","remove","rm","delete"],ans:2,diff:"medium"},
-{q:"Install Python in Termux?",opts:["apt install python","pkg install python","pip install python","brew install python"],ans:1,diff:"medium"},
-{q:"Make a script executable?",opts:["chmod +x script.sh","exec script.sh","run script.sh","execute script.sh"],ans:0,diff:"medium"},
-{q:"Declare a bash variable?",opts:["var 
+{q:"Create a new folder?",opts:["createdir","mkdir","newdir","makedir"],ans:1,diff:"ea
