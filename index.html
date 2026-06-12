@@ -523,7 +523,9 @@ async function finSetup(){
   if(!CU)return;
   var today=new Date().toDateString();
   UP={name:CU.displayName||CU.phoneNumber||'Coder',email:CU.email||'',lang:selLang_||signupLang||'en',level:selLv_,progress:{},testCount:0,bestScore:0,streak:1,lastActive:today,badges:[],testHistory:[]};
-  await db.collection('users').doc(CU.uid).set(UP);afterLogin();
+  await db.collection('users').doc(CU.uid).set(UP);
+  document.getElementById('bnav').style.display='flex';
+  afterLogin();
 }
 
 function afterLogin(){
@@ -613,11 +615,18 @@ function updHP(){
 var CP='login';
 function showPage(id){
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
-  document.getElementById('page-'+id).classList.add('active');CP=id;
+  var pg=document.getElementById('page-'+id);
+  if(!pg){console.log('Page not found:',id);return;}
+  pg.classList.add('active');CP=id;
+  var loggedIn=CU||(UP&&UP.name==='Guest');
+  if(loggedIn&&id!=='login'&&id!=='phone'&&id!=='setup'){
+    document.getElementById('bnav').style.display='flex';
+  }
   document.querySelectorAll('.bni').forEach(function(b){b.classList.remove('active');});
   var m={home:'bn-home',test:'bn-test',ai:'bn-ai',profile:'bn-profile'};
-  if(m[id])document.getElementById(m[id]).classList.add('active');
-  window.scrollTo(0,0);pushH(id);if(id==='profile')loadProfile();
+  if(m[id]){var bn=document.getElementById(m[id]);if(bn)bn.classList.add('active');}
+  window.scrollTo(0,0);pushH(id);
+  if(id==='profile')loadProfile();
 }
 function goHome(){showPage('home');updHP();}
 
@@ -643,7 +652,7 @@ css:{color:"#3b82f6",badge:"CSS",sections:[
 ],qb:"css"},
 js:{color:"#fbbf24",badge:"JavaScript",sections:[
 {title:"JS Basics",badge:"L01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>JavaScript makes websites <strong>interactive</strong>.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(0)'>Run</button></div><textarea class='ce' id='ed-js-0'>let name = \"Shoav\";\nlet skills = [\"HTML\", \"CSS\", \"JS\"];\nconsole.log(\"Hello, \" + name + \"!\");\nconsole.log(\"Skills:\", skills.length);\nconsole.log(typeof name);</textarea><div class='ob' id='oj-0'></div></div>"},
-{title:"Functions",badge:"L02",content:"<div class='ic'><div class='lb'>FUNCTIONS</div><p>Reusable code blocks. Arrow functions are modern JS.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(1)'>Run</button></div><textarea class='ce' id='ed-js-1'>const greet = name => \"Hello, \" + name + \"!\";\nconst add = (a, b) => a + b;\nconsole.log(greet(\"Shoav\"));\nconsole.log(\"5+3=\", add(5,3));\nconsole.log(\"Square:\", x => x*x)(4);</textarea><div class='ob' id='oj-1'></div></div>"},
+{title:"Functions",badge:"L02",content:"<div class='ic'><div class='lb'>FUNCTIONS</div><p>Reusable code blocks. Arrow functions are modern JS.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(1)'>Run</button></div><textarea class='ce' id='ed-js-1'>const greet = name => \"Hello, \" + name + \"!\";\nconst add = (a, b) => a + b;\nconst square = x => x * x;\nconsole.log(greet(\"Shoav\"));\nconsole.log(\"5+3=\", add(5,3));\nconsole.log(\"4²=\", square(4));</textarea><div class='ob' id='oj-1'></div></div>"},
 {title:"Arrays & Objects",badge:"L03",content:"<div class='ic'><div class='lb'>DATA</div><p><strong>Arrays</strong>=lists. <strong>Objects</strong>=key-value.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(2)'>Run</button></div><textarea class='ce' id='ed-js-2'>let fruits = [\"apple\", \"mango\"];\nfruits.push(\"orange\");\nfruits.forEach(f => console.log(f));\nlet user = {name:\"Shoav\", age:16};\nconsole.log(user.name, \"age:\", user.age);\nconsole.log(Object.keys(user));</textarea><div class='ob' id='oj-2'></div></div>"},
 {title:"DOM",badge:"L04",content:"<div class='ic'><div class='lb'>DOM</div><p>JavaScript can <strong>change HTML</strong> in real-time!</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"js\",3)'>Run</button></div><textarea class='ce' id='ed-js-3'>&lt;button onclick=\"changeIt()\" style=\"padding:10px 20px;background:#6366f1;color:white;border:none;border-radius:8px;cursor:pointer\"&gt;Click Me!&lt;/button&gt;\n&lt;p id=\"msg\" style=\"font-size:20px;margin-top:10px\"&gt;Hello!&lt;/p&gt;\n&lt;script&gt;\nlet count=0;\nfunction changeIt(){count++;document.getElementById(\"msg\").textContent=\"Clicked: \"+count;}\n&lt;/script&gt;</textarea><div class='pf2'><iframe id='pv-js-3'></iframe></div></div>"},
 {title:"Async/Await",badge:"L05",content:"<div class='ic'><div class='lb'>ASYNC</div><p><strong>async/await</strong> makes async code clean and readable.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(4)'>Run</button></div><textarea class='ce' id='ed-js-4'>const wait = ms => new Promise(r => setTimeout(r, ms));\nasync function run(){\n  console.log(\"Start!\");\n  const p = Promise.resolve(42);\n  const val = await p;\n  console.log(\"Promise value:\", val);\n  console.log(\"Done!\");\n}\nrun();</textarea><div class='ob' id='oj-4'></div></div>"},
@@ -750,7 +759,4 @@ python:[
 {q:"Python list syntax?",opts:["{}","()","[]","<>"],ans:2,diff:"easy"},
 {q:"Dictionary in Python?",opts:["List type","Key-value pairs","Function","Class"],ans:1,diff:"medium"},
 {q:"def keyword?",opts:["Variable","Loop","Define function","Import"],ans:2,diff:"medium"},
-{q:"Why indentation required?",opts:["Decoration","Defines blocks","Speed","Optional"],ans:1,diff:"medium"},
-{q:"[x*2 for x in range(3)] gives?",opts:["[0,2,4]","[1,2,3]","[2,4,6]","[0,1,2]"],ans:2,diff:"hard"},
-{q:"__init__ is called when?",opts:["Function call","Object created","Program start","Import"],ans:1,diff:"hard"},
-{q:"pip is?",opts:["Editor","Package manager","Debugger","Compiler"],an
+{q:"Why indentation required?",opts:["Decoration","Defines blocks"
