@@ -14,49 +14,48 @@
 body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-height:100vh;overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 0%,rgba(99,102,241,0.07) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 100%,rgba(34,211,238,0.05) 0%,transparent 60%);pointer-events:none;z-index:0;}
 .topbar{position:sticky;top:0;z-index:200;background:rgba(6,6,8,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;gap:10px;}
-.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:#fff;flex-shrink:0;box-shadow:0 0 16px rgba(99,102,241,0.3);}
+.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:#fff;flex-shrink:0;}
 .topbar-info{flex:1;}.topbar-title{font-size:0.95rem;font-weight:800;}.topbar-sub{font-size:0.67rem;color:var(--muted2);}
 .topbar-right{display:flex;align-items:center;gap:8px;}
 .streak-badge{display:flex;align-items:center;gap:4px;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.25);border-radius:20px;padding:4px 10px;font-size:0.72rem;font-weight:800;color:var(--yellow);}
 .user-btn{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:5px 10px;font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:700;color:var(--text);cursor:pointer;display:flex;align-items:center;gap:6px;}
-.user-avatar-placeholder{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;}
+.uap{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;}
 .page{display:none;animation:fadeUp 0.3s ease;position:relative;z-index:1;}.page.active{display:block;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
-/* LOGIN */
 .login-page{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;}
-.login-logo{width:72px;height:72px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:22px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:30px;color:#fff;margin:0 auto 20px;box-shadow:0 0 40px rgba(99,102,241,0.35);}
+.login-logo{width:72px;height:72px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:22px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:30px;color:#fff;margin:0 auto 20px;}
 .login-title{font-size:1.9rem;font-weight:900;margin-bottom:8px;}.login-title span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .login-sub{color:var(--muted2);font-size:0.88rem;margin-bottom:32px;line-height:1.65;}
 .auth-box{width:100%;max-width:320px;}
 .auth-tabs{display:flex;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:4px;margin-bottom:18px;}
-.auth-tab{flex:1;padding:9px;border:none;border-radius:9px;background:transparent;color:var(--muted2);font-family:'Outfit',sans-serif;font-size:0.83rem;font-weight:700;cursor:pointer;transition:all 0.2s;}
+.auth-tab{flex:1;padding:9px;border:none;border-radius:9px;background:transparent;color:var(--muted2);font-family:'Outfit',sans-serif;font-size:0.83rem;font-weight:700;cursor:pointer;}
 .auth-tab.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;}
 .auth-input{width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:11px;padding:13px 14px;font-family:'Outfit',sans-serif;font-size:0.9rem;color:var(--text);outline:none;margin-bottom:10px;}
-.auth-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:12px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:800;color:#fff;cursor:pointer;margin-bottom:10px;box-shadow:0 4px 20px rgba(99,102,241,0.25);}
+.auth-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:12px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:800;color:#fff;cursor:pointer;margin-bottom:10px;}
 .auth-btn:active{transform:scale(0.97);}
 .divider{display:flex;align-items:center;gap:10px;margin:12px 0;}.divider-line{flex:1;height:1px;background:var(--border);}.divider span{font-size:0.72rem;color:var(--muted);}
 .social-btn{width:100%;padding:12px;background:var(--card);border:1.5px solid var(--border);border-radius:12px;font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:700;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;}
 .social-btn:active{transform:scale(0.97);}
 .guest-btn{width:100%;padding:11px;background:transparent;border:1.5px solid var(--border);border-radius:12px;font-family:'Outfit',sans-serif;font-size:0.83rem;font-weight:700;color:var(--muted2);cursor:pointer;}
 .auth-error{background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.25);border-radius:9px;padding:10px 12px;font-size:0.82rem;color:var(--red);margin-bottom:12px;text-align:center;display:none;}
-/* OTP */
+.lang-sel-row{display:flex;gap:8px;margin-bottom:14px;}
+.lang-opt{flex:1;padding:10px 6px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:700;color:var(--muted2);cursor:pointer;text-align:center;}
+.lang-opt.selected{border-color:var(--accent);background:rgba(99,102,241,0.1);color:var(--accent);}
 .otp-page{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;}
 .otp-icon{font-size:3rem;margin-bottom:16px;}.otp-title{font-size:1.4rem;font-weight:900;margin-bottom:6px;}.otp-sub{color:var(--muted2);font-size:0.85rem;margin-bottom:28px;line-height:1.6;}
 .otp-inputs{display:flex;gap:8px;justify-content:center;margin-bottom:20px;}
 .otp-input{width:44px;height:52px;background:var(--card);border:1.5px solid var(--border);border-radius:12px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:700;color:var(--text);outline:none;}
 .otp-input:focus{border-color:var(--accent);}
 .resend-btn{background:transparent;border:none;color:var(--accent);font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;margin-top:8px;}
-/* SETUP */
 .setup-page{padding:24px 18px;max-width:480px;margin:0 auto;}
 .setup-step{display:none;}.setup-step.active{display:block;animation:fadeUp 0.3s ease;}
 .setup-title{font-size:1.45rem;font-weight:900;margin-bottom:6px;}.setup-sub{color:var(--muted2);font-size:0.85rem;margin-bottom:24px;}
-.setup-card{background:var(--card);border:1.5px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px;cursor:pointer;transition:all 0.2s;}
+.setup-card{background:var(--card);border:1.5px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px;cursor:pointer;}
 .setup-card.selected{border-color:var(--accent);background:rgba(99,102,241,0.07);}
 .setup-card-title{font-size:1rem;font-weight:700;margin-bottom:4px;}.setup-card-desc{font-size:0.8rem;color:var(--muted2);}
 .setup-next{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:12px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:800;color:#fff;cursor:pointer;margin-top:8px;}
 .setup-dots{display:flex;gap:6px;justify-content:center;margin-bottom:24px;}
-.setup-dot{width:8px;height:8px;border-radius:50%;background:var(--border2);transition:all 0.3s;}.setup-dot.active{background:var(--accent);width:22px;border-radius:4px;}
-/* HOME */
+.setup-dot{width:8px;height:8px;border-radius:50%;background:var(--border2);}.setup-dot.active{background:var(--accent);width:22px;border-radius:4px;}
 .home-header{padding:20px 18px 14px;}
 .home-greeting{font-size:1.5rem;font-weight:900;margin-bottom:4px;}.home-greeting span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .home-sub{color:var(--muted2);font-size:0.83rem;}
@@ -65,21 +64,20 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .hstat-n{font-size:1.2rem;font-weight:900;}.hstat-l{font-size:0.62rem;color:var(--muted2);margin-top:2px;}
 .section-title{font-size:0.65rem;font-family:'JetBrains Mono',monospace;color:var(--muted2);letter-spacing:1.5px;text-transform:uppercase;padding:0 18px;margin-bottom:10px;}
 .lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 18px 16px;}
-.lang-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 12px;cursor:pointer;transition:all 0.25s;position:relative;overflow:hidden;text-align:center;}
+.lang-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 12px;cursor:pointer;position:relative;overflow:hidden;text-align:center;}
 .lang-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
-.lang-card.html::before{background:#f97316;}.lang-card.css::before{background:#3b82f6;}.lang-card.js::before{background:#fbbf24;}.lang-card.python::before{background:#4ade80;}.lang-card.cpp::before{background:#f472b6;}.lang-card.java::before{background:#f97316;}.lang-card.sql::before{background:#22d3ee;}.lang-card.bash::before{background:#a78bfa;}.lang-card.logic::before{background:linear-gradient(90deg,#f97316,#6366f1);}
+.lang-card.html::before{background:#f97316;}.lang-card.css::before{background:#3b82f6;}.lang-card.js::before{background:#fbbf24;}.lang-card.python::before{background:#4ade80;}.lang-card.cpp::before{background:#f472b6;}.lang-card.java::before{background:#f97316;}.lang-card.sql::before{background:#22d3ee;}.lang-card.bash::before{background:#a78bfa;}.lang-card.logic::before{background:linear-gradient(90deg,#f97316,#6366f1);}.lang-card.english::before{background:#f43f5e;}
 .lang-card:active{transform:scale(0.96);}
 .lang-icon{font-size:1.8rem;margin-bottom:8px;}.lang-name{font-size:0.88rem;font-weight:800;margin-bottom:3px;}.lang-desc{font-size:0.68rem;color:var(--muted2);}
 .lang-pw{margin-top:8px;height:3px;background:var(--border);border-radius:3px;overflow:hidden;}
-.lang-pf{height:100%;border-radius:3px;transition:width 0.6s ease;}
-.html .lang-pf{background:#f97316;}.css .lang-pf{background:#3b82f6;}.js .lang-pf{background:#fbbf24;}.python .lang-pf{background:#4ade80;}.cpp .lang-pf{background:#f472b6;}.java .lang-pf{background:#f97316;}.sql .lang-pf{background:#22d3ee;}.bash .lang-pf{background:#a78bfa;}.logic .lang-pf{background:#6366f1;}
+.lang-pf{height:100%;border-radius:3px;}
+.html .lang-pf{background:#f97316;}.css .lang-pf{background:#3b82f6;}.js .lang-pf{background:#fbbf24;}.python .lang-pf{background:#4ade80;}.cpp .lang-pf{background:#f472b6;}.java .lang-pf{background:#f97316;}.sql .lang-pf{background:#22d3ee;}.bash .lang-pf{background:#a78bfa;}.logic .lang-pf{background:#6366f1;}.english .lang-pf{background:#f43f5e;}
 .lang-card.test{grid-column:span 2;}.lang-card.test::before{background:linear-gradient(90deg,var(--accent),var(--accent2));}
 .lang-card.ai-t{grid-column:span 2;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,211,238,0.08));border-color:rgba(99,102,241,0.25);}.lang-card.ai-t::before{background:linear-gradient(90deg,var(--accent),var(--accent2));}
 .done-b{position:absolute;top:8px;right:8px;background:rgba(74,222,128,0.12);border:1px solid rgba(74,222,128,0.25);color:var(--green);border-radius:6px;font-size:0.58rem;font-weight:700;padding:2px 6px;}
 .guest-banner{background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:10px;padding:10px 14px;margin:0 18px 14px;display:flex;align-items:center;gap:10px;}
 .guest-banner-text{flex:1;font-size:0.78rem;color:#a5b4fc;}
 .guest-banner-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:8px;padding:6px 12px;font-family:'Outfit',sans-serif;font-size:0.75rem;font-weight:800;color:#fff;cursor:pointer;}
-/* LESSON */
 .lesson-topbar{padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);}
 .back-btn{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:6px 12px;color:var(--muted2);font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:700;cursor:pointer;}
 .ltb{flex:1;}.ltb h2{font-size:0.95rem;font-weight:800;}.ltb span{font-size:0.68rem;color:var(--muted2);}
@@ -106,7 +104,7 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
 .qn{font-size:0.65rem;font-family:'JetBrains Mono',monospace;color:var(--accent);letter-spacing:1px;margin-bottom:5px;}
 .qq{font-size:0.9rem;font-weight:700;margin-bottom:12px;line-height:1.5;}
 .qo{display:flex;flex-direction:column;gap:7px;}
-.ob2{background:#07070c;border:1.5px solid var(--border);border-radius:9px;padding:10px 12px;font-family:'Outfit',sans-serif;font-size:0.82rem;color:var(--text);cursor:pointer;text-align:left;transition:all 0.2s;}
+.ob2{background:#07070c;border:1.5px solid var(--border);border-radius:9px;padding:10px 12px;font-family:'Outfit',sans-serif;font-size:0.82rem;color:var(--text);cursor:pointer;text-align:left;}
 .ob2.correct{border-color:var(--green);background:rgba(74,222,128,0.08);color:var(--green);}
 .ob2.wrong{border-color:var(--red);background:rgba(248,113,113,0.08);color:var(--red);}
 .qf{margin-top:8px;padding:9px 11px;border-radius:7px;font-size:0.8rem;display:none;}.qf.show{display:block;}
@@ -116,7 +114,6 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
 .ln{display:flex;gap:10px;padding:16px;position:sticky;bottom:0;background:rgba(6,6,8,0.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);}
 .np{flex:0 0 auto;background:var(--card2);border:1px solid var(--border);border-radius:11px;padding:12px 16px;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:700;color:var(--muted2);cursor:pointer;}
 .nn{flex:1;border:none;border-radius:11px;padding:12px;font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:800;color:#fff;cursor:pointer;}
-/* TEST */
 .th{padding:28px 18px 16px;text-align:center;}.th h1{font-size:1.6rem;font-weight:900;margin-bottom:6px;}.th p{color:var(--muted2);font-size:0.85rem;line-height:1.6;}
 .ts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 18px 16px;}
 .sb2{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 8px;text-align:center;}
@@ -127,23 +124,19 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
 .tl{font-size:0.65rem;font-weight:700;padding:2px 7px;border-radius:5px;}
 .tqq{font-size:0.88rem;font-weight:700;line-height:1.5;margin-bottom:12px;}
 .to{display:flex;flex-direction:column;gap:7px;}
-.to2{background:#07070c;border:1.5px solid var(--border);border-radius:9px;padding:10px 12px;font-family:'Outfit',sans-serif;font-size:0.82rem;color:var(--text);cursor:pointer;text-align:left;transition:all 0.2s;}
-.to2:active{border-color:var(--accent);}.to2.sel{border-color:var(--accent);background:rgba(99,102,241,0.1);color:#c7d2fe;}
+.to2{background:#07070c;border:1.5px solid var(--border);border-radius:9px;padding:10px 12px;font-family:'Outfit',sans-serif;font-size:0.82rem;color:var(--text);cursor:pointer;text-align:left;}
+.to2.sel{border-color:var(--accent);background:rgba(99,102,241,0.1);color:#c7d2fe;}
 .tsw{padding:18px;}.sub{width:100%;padding:15px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:13px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:800;color:#fff;cursor:pointer;}
-.sub:active{transform:scale(0.98);}
 .test-loading{text-align:center;padding:60px 20px;color:var(--muted2);}
-.test-loading .tl-icon{font-size:2.5rem;margin-bottom:14px;display:block;}
-@keyframes spin{to{transform:rotate(360deg);}}.spin{animation:spin 1.5s linear infinite;display:inline-block;}
-/* CHECKING */
+@keyframes spin{to{transform:rotate(360deg);}}.spin{animation:spin 1.5s linear infinite;display:inline-block;font-size:2.5rem;}
 .cp{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;padding:40px 18px;text-align:center;}
 .tr{width:130px;height:130px;position:relative;margin-bottom:24px;}
 .tr svg{transform:rotate(-90deg);}
 .tr circle.bg{fill:none;stroke:var(--border);stroke-width:8;}
-.tr circle.fi{fill:none;stroke:url(#tg);stroke-width:8;stroke-linecap:round;stroke-dasharray:339;stroke-dashoffset:0;transition:stroke-dashoffset 1s linear;}
+.tr circle.fi{fill:none;stroke:url(#tg);stroke-width:8;stroke-linecap:round;stroke-dasharray:339;stroke-dashoffset:0;}
 .tc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 .ts2{font-size:2rem;font-weight:900;font-family:'JetBrains Mono',monospace;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .tl2{font-size:0.6rem;color:var(--muted2);margin-top:2px;}.ct{font-size:1.3rem;font-weight:800;margin-bottom:6px;}.cs{color:var(--muted2);font-size:0.85rem;}
-/* RESULT */
 .rp{padding:20px 18px;}.rh{text-align:center;margin-bottom:20px;}.re{font-size:3rem;margin-bottom:10px;}
 .rs{font-size:2.8rem;font-weight:900;font-family:'JetBrains Mono',monospace;}.rl{color:var(--muted2);font-size:0.85rem;margin-top:3px;}
 .rg{display:inline-block;margin-top:10px;padding:5px 16px;border-radius:20px;font-size:0.95rem;font-weight:800;}
@@ -152,21 +145,20 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
 .br{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
 .bl{font-size:0.76rem;font-weight:700;width:65px;flex-shrink:0;}
 .bbw{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;}
-.bb{height:100%;border-radius:3px;transition:width 0.8s ease;}
+.bb{height:100%;border-radius:3px;}
 .bsc{font-size:0.72rem;font-family:'JetBrains Mono',monospace;color:var(--muted2);width:30px;text-align:right;}
 .ra{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:12px;}
 .ai2{padding:8px 0;border-bottom:1px solid var(--border);}.ai2:last-child{border:none;}
 .aq{font-size:0.8rem;margin-bottom:5px;line-height:1.5;}.ar{display:flex;gap:6px;flex-wrap:wrap;}
 .ac{font-size:0.68rem;padding:2px 7px;border-radius:5px;}
 .ac.correct{background:rgba(74,222,128,0.1);color:var(--green);}.ac.wrong{background:rgba(248,113,113,0.1);color:var(--red);}.ac.right{background:rgba(99,102,241,0.1);color:#a5b4fc;}
-.ai-feedback-box{background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,211,238,0.06));border:1px solid rgba(99,102,241,0.2);border-radius:14px;padding:16px;margin-bottom:16px;}
-.aifb-title{font-size:0.72rem;font-family:'JetBrains Mono',monospace;color:var(--accent);letter-spacing:1px;margin-bottom:10px;}
-.aifb-text{font-size:0.86rem;line-height:1.75;color:#cbd5e1;}
+.ai-fb{background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,211,238,0.06));border:1px solid rgba(99,102,241,0.2);border-radius:14px;padding:16px;margin-bottom:16px;}
+.ai-fb-t{font-size:0.72rem;font-family:'JetBrains Mono',monospace;color:var(--accent);letter-spacing:1px;margin-bottom:10px;}
+.ai-fb-tx{font-size:0.86rem;line-height:1.75;color:#cbd5e1;}
 .cb2,.rtb,.hb{width:100%;padding:13px;border-radius:11px;border:none;font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:800;cursor:pointer;margin-bottom:8px;}
 .cb2{background:var(--card2);border:1px solid var(--border);color:var(--text);}
 .rtb{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;}
 .hb{background:var(--card2);border:1px solid var(--border);color:var(--muted2);}
-/* BADGES */
 .ppb{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:14px;}
 .pst{font-size:0.65rem;font-family:'JetBrains Mono',monospace;color:var(--muted2);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;}
 .badges-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
@@ -176,23 +168,20 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
 .badge-item.earned .badge-icon{filter:none;opacity:1;}
 .badge-name{font-size:0.58rem;color:var(--muted2);font-weight:700;}
 .badge-item.earned .badge-name{color:var(--yellow);}
-/* TEST HISTORY */
 .th-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);}
 .th-item:last-child{border:none;}.th-date{font-size:0.72rem;color:var(--muted2);}
 .th-score{font-size:0.88rem;font-weight:800;font-family:'JetBrains Mono',monospace;}
 .th-grade{font-size:0.65rem;font-weight:700;padding:2px 7px;border-radius:5px;}
-/* PROFILE */
 .pp{padding:20px 18px;}
 .ph{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;margin-bottom:14px;}
 .pap{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;color:#fff;margin:0 auto 12px;}
 .pa{width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid var(--accent);}
 .pn{font-size:1.2rem;font-weight:800;margin-bottom:3px;}.pe{font-size:0.78rem;color:var(--muted2);margin-bottom:10px;}
-.plb{display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:20px;padding:4px 12px;font-size:0.75rem;color:#a5b4fc;font-weight:700;}
+.plb{display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:20px;padding:4px 12px;font-size:0.75rem;color:#a5b4fc;font-weight:700;margin-bottom:8px;}
 .ps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
 .psb{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 8px;text-align:center;}
 .psn{font-size:1.4rem;font-weight:900;}.psl{font-size:0.63rem;color:var(--muted2);margin-top:2px;}
 .sob{width:100%;padding:13px;background:var(--card2);border:1px solid rgba(248,113,113,0.2);border-radius:11px;font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:800;color:var(--red);cursor:pointer;}
-/* ASK AI */
 .aip{padding:16px 18px;display:flex;flex-direction:column;height:calc(100vh - 130px);}
 .aim{flex:1;overflow-y:auto;padding-bottom:12px;}
 .aimsg{margin-bottom:14px;}.aimsg.user{text-align:right;}.aimsg.bot{text-align:left;}
@@ -200,21 +189,18 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
 .aimsg.user .aib{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-radius:14px 14px 4px 14px;}
 .aimsg.bot .aib{background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:14px 14px 14px 4px;}
 .aimsg.bot .aib code{background:#07070c;padding:2px 5px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--green);}
-.aimsg.bot .aib pre{background:#07070c;border:1px solid var(--border);border-radius:8px;padding:10px;margin:8px 0;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:0.76rem;color:#e2e8f0;line-height:1.7;position:relative;}
-.copy-code-btn{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:3px 8px;font-size:0.65rem;font-weight:700;color:var(--muted2);cursor:pointer;float:right;margin-bottom:4px;}
+.aimsg.bot .aib pre{background:#07070c;border:1px solid var(--border);border-radius:8px;padding:10px;margin:8px 0;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:0.76rem;color:#e2e8f0;line-height:1.7;}
+.cpy-btn{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:3px 8px;font-size:0.65rem;font-weight:700;color:var(--muted2);cursor:pointer;float:right;margin-bottom:4px;}
 .aiw{display:flex;gap:8px;padding-top:12px;border-top:1px solid var(--border);}
 .aii{flex:1;background:var(--card);border:1.5px solid var(--border);border-radius:11px;padding:11px 14px;font-family:'Outfit',sans-serif;font-size:0.86rem;color:var(--text);outline:none;resize:none;}
 .aii:focus{border-color:var(--accent);}
 .ais{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:11px;padding:11px 16px;color:#fff;font-size:1.1rem;cursor:pointer;}
-.ais:active{transform:scale(0.95);}
 .aty{display:flex;gap:6px;padding:6px 0;}
 .aty span{width:7px;height:7px;background:var(--muted2);border-radius:50%;animation:bounce 1.2s infinite;}
 .aty span:nth-child(2){animation-delay:0.2s;}.aty span:nth-child(3){animation-delay:0.4s;}
 @keyframes bounce{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-8px);}}
-.quick-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
 .chip{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:6px 12px;font-size:0.75rem;font-weight:700;color:var(--text);cursor:pointer;white-space:nowrap;}
-.chip:active{border-color:var(--accent);color:var(--accent);}
-/* BOTTOM NAV */
 .bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(6,6,8,0.97);backdrop-filter:blur(16px);border-top:1px solid var(--border);display:flex;z-index:150;}
 .bni{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 4px;cursor:pointer;}
 .bnic{font-size:1.3rem;margin-bottom:3px;}.bnl{font-size:0.6rem;font-weight:700;color:var(--muted2);}
@@ -224,16 +210,15 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
 </style>
 </head>
 <body>
-<div class="topbar" id="topbar">
+<div class="topbar">
   <div class="logo-mark">C</div>
   <div class="topbar-info"><div class="topbar-title">Coding by Shoav</div><div class="topbar-sub">Learn Programming Smarter</div></div>
   <div class="topbar-right">
     <div class="streak-badge" id="streakBadge" style="display:none">🔥 <span id="streakCount">0</span></div>
-    <div class="user-btn" id="uBtn" onclick="showPage('profile')" style="display:none"><div class="user-avatar-placeholder" id="uAv">?</div></div>
+    <div class="user-btn" id="uBtn" onclick="showPage('profile')" style="display:none"><div class="uap" id="uAv">?</div></div>
   </div>
 </div>
 
-<!-- LOGIN -->
 <div class="page active pb" id="page-login">
 <div class="login-page">
 <div class="login-logo">C</div>
@@ -244,7 +229,14 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
     <button class="auth-tab active" id="tabLogin" onclick="switchTab('login')">Sign In</button>
     <button class="auth-tab" id="tabSignup" onclick="switchTab('signup')">Create Account</button>
   </div>
-  <div id="nameField" style="display:none"><input class="auth-input" id="authName" type="text" placeholder="Your Name"></div>
+  <div id="signupExtras" style="display:none">
+    <input class="auth-input" id="authName" type="text" placeholder="Your Name">
+    <div style="font-size:0.72rem;color:var(--muted2);margin-bottom:8px;text-align:left">Choose Language</div>
+    <div class="lang-sel-row">
+      <div class="lang-opt selected" id="lo-en" onclick="selSL('en')">🇬🇧 English</div>
+      <div class="lang-opt" id="lo-hi" onclick="selSL('hi')">🇮🇳 Hinglish</div>
+    </div>
+  </div>
   <input class="auth-input" id="authEmail" type="email" placeholder="Email Address">
   <input class="auth-input" id="authPass" type="password" placeholder="Password">
   <div class="auth-error" id="authError"></div>
@@ -257,16 +249,13 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
   <button class="social-btn" onclick="showPhoneLogin()">📱 Continue with Phone</button>
   <button class="guest-btn" onclick="skipLogin()">Continue as Guest</button>
 </div>
-<div style="font-size:0.72rem;color:var(--muted);margin-top:18px;">Sign in to save your progress across all devices</div>
+<div style="font-size:0.72rem;color:var(--muted);margin-top:18px;">Sign in to save progress across all devices</div>
 </div></div>
 
-<!-- PHONE LOGIN -->
 <div class="page pb" id="page-phone">
 <div class="otp-page">
   <div id="phoneInputSection">
-    <div class="otp-icon">📱</div>
-    <div class="otp-title">Phone Login</div>
-    <div class="otp-sub">Enter your phone number to receive a verification code</div>
+    <div class="otp-icon">📱</div><div class="otp-title">Phone Login</div><div class="otp-sub">Enter your phone number</div>
     <div style="width:100%;max-width:300px;">
       <input class="auth-input" id="phoneNumber" type="tel" placeholder="+91 98765 43210" style="margin-bottom:10px;">
       <div id="recaptcha-container" style="margin:10px 0;"></div>
@@ -276,9 +265,8 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
     </div>
   </div>
   <div id="otpSection" style="display:none;">
-    <div class="otp-icon">🔐</div>
-    <div class="otp-title">Enter OTP</div>
-    <div class="otp-sub">6-digit code sent to<br><strong id="phoneSent" style="color:var(--accent2)"></strong></div>
+    <div class="otp-icon">🔐</div><div class="otp-title">Enter OTP</div>
+    <div class="otp-sub">Code sent to <strong id="phoneSent" style="color:var(--accent2)"></strong></div>
     <div class="otp-inputs">
       <input class="otp-input" maxlength="1" id="otp0" oninput="otpMove(0)">
       <input class="otp-input" maxlength="1" id="otp1" oninput="otpMove(1)">
@@ -293,36 +281,32 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
   </div>
 </div></div>
 
-<!-- SETUP -->
 <div class="page pb" id="page-setup">
 <div class="setup-page">
 <div class="setup-dots"><div class="setup-dot active" id="d0"></div><div class="setup-dot" id="d1"></div></div>
 <div class="setup-step active" id="ss0">
-<div class="setup-title">Choose your language 🌐</div>
-<div class="setup-sub">You can change this later</div>
-<div class="setup-card" id="lhi" onclick="selLang('hi')"><div class="setup-card-title">🇮🇳 Hinglish</div><div class="setup-card-desc">Hindi + English mix</div></div>
-<div class="setup-card" id="len" onclick="selLang('en')"><div class="setup-card-title">🇬🇧 English</div><div class="setup-card-desc">Full English</div></div>
+<div class="setup-title">Choose Language 🌐</div><div class="setup-sub">Change anytime in profile</div>
+<div class="setup-card selected" id="lsen" onclick="selLang('en')"><div class="setup-card-title">🇬🇧 English</div><div class="setup-card-desc">Full English</div></div>
+<div class="setup-card" id="lshi" onclick="selLang('hi')"><div class="setup-card-title">🇮🇳 Hinglish</div><div class="setup-card-desc">Hindi + English mix</div></div>
 <button class="setup-next" onclick="sNext(1)">Next →</button>
 </div>
 <div class="setup-step" id="ss1">
-<div class="setup-title">Your coding level? 💻</div>
-<div class="setup-sub">Be honest — no judgment!</div>
+<div class="setup-title">Your Coding Level? 💻</div><div class="setup-sub">Be honest — no judgment!</div>
 <div class="setup-card" id="lv0" onclick="selLv(0)"><div class="setup-card-title">🌱 Complete Beginner</div><div class="setup-card-desc">Never written code</div></div>
 <div class="setup-card" id="lv1" onclick="selLv(1)"><div class="setup-card-title">📚 Know the Basics</div><div class="setup-card-desc">Some HTML/CSS</div></div>
 <div class="setup-card" id="lv2" onclick="selLv(2)"><div class="setup-card-title">💡 AI-Assisted Coder</div><div class="setup-card-desc">Use AI, want to understand</div></div>
 <button class="setup-next" onclick="finSetup()">Let's Go 🚀</button>
 </div></div></div>
 
-<!-- HOME -->
 <div class="page pb" id="page-home">
 <div class="home-header">
   <div class="home-greeting">Hello, <span id="hName">there</span>! 👋</div>
-  <div class="home-sub" id="hSub">What would you like to learn today?</div>
+  <div class="home-sub">What would you like to learn today?</div>
 </div>
 <div class="home-stats-row">
-  <div class="hstat"><div class="hstat-n" id="stHomeLessons" style="color:var(--accent2)">0</div><div class="hstat-l">Done</div></div>
-  <div class="hstat"><div class="hstat-n" id="stHomeStreak" style="color:var(--yellow)">0🔥</div><div class="hstat-l">Streak</div></div>
-  <div class="hstat"><div class="hstat-n" id="stHomeBest" style="color:var(--green)">0%</div><div class="hstat-l">Best</div></div>
+  <div class="hstat"><div class="hstat-n" id="stHL" style="color:var(--accent2)">0</div><div class="hstat-l">Done</div></div>
+  <div class="hstat"><div class="hstat-n" id="stHS" style="color:var(--yellow)">0🔥</div><div class="hstat-l">Streak</div></div>
+  <div class="hstat"><div class="hstat-n" id="stHB" style="color:var(--green)">0%</div><div class="hstat-l">Best</div></div>
 </div>
 <div id="guestBanner" style="display:none" class="guest-banner">
   <div class="guest-banner-text">Sign in to save progress across devices</div>
@@ -339,58 +323,59 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
 <div class="lang-card sql" onclick="openL('sql')"><div class="done-b" id="dn-sql" style="display:none">✓</div><div class="lang-icon">🗄️</div><div class="lang-name">SQL</div><div class="lang-desc">Database</div><div class="lang-pw"><div class="lang-pf" id="lp-sql" style="width:0%"></div></div></div>
 <div class="lang-card bash" onclick="openL('bash')"><div class="done-b" id="dn-bash" style="display:none">✓</div><div class="lang-icon">💻</div><div class="lang-name">Bash</div><div class="lang-desc">Terminal</div><div class="lang-pw"><div class="lang-pf" id="lp-bash" style="width:0%"></div></div></div>
 <div class="lang-card logic" onclick="openL('logic')"><div class="done-b" id="dn-logic" style="display:none">✓</div><div class="lang-icon">🧠</div><div class="lang-name">Logic &amp; IQ</div><div class="lang-desc">Problem Solving</div><div class="lang-pw"><div class="lang-pf" id="lp-logic" style="width:0%"></div></div></div>
+<div class="lang-card english" onclick="openL('english')"><div class="done-b" id="dn-english" style="display:none">✓</div><div class="lang-icon">📖</div><div class="lang-name">English</div><div class="lang-desc">Grammar &amp; Writing</div><div class="lang-pw"><div class="lang-pf" id="lp-english" style="width:0%"></div></div></div>
 <div class="lang-card test" onclick="startTest()"><div class="lang-icon">📝</div><div class="lang-name">AI-Powered Test</div><div class="lang-desc">Fresh questions · Smart grading</div></div>
 <div class="lang-card ai-t" onclick="showPage('ai')"><div class="lang-icon">✨</div><div class="lang-name">Ask AI</div><div class="lang-desc">Ask anything about coding</div></div>
 </div></div>
 
-<!-- LESSON -->
 <div class="page pb" id="page-lesson">
-<div class="lesson-topbar"><button class="back-btn" onclick="goHome()">← Back</button><div class="ltb"><h2 id="lh">HTML</h2><span id="ls">Lesson 1 of 3</span></div></div>
+<div class="lesson-topbar"><button class="back-btn" onclick="goHome()">← Back</button><div class="ltb"><h2 id="lh">HTML</h2><span id="ls">Lesson 1</span></div></div>
 <div id="lb"></div>
 <div class="ln"><button class="np" id="npb" onclick="lNav(-1)">←</button><button class="nn" id="nnb" onclick="lNav(1)">Next →</button></div>
 </div>
 
-<!-- TEST -->
 <div class="page pb" id="page-test">
-<div class="th"><h1>📝 AI Test</h1><p>AI-generated questions · No repeats<br>Smart grading every time</p></div>
+<div class="th"><h1>📝 AI Test</h1><p>AI-generated · No repeats · Smart grading</p></div>
 <div class="ts"><div class="sb2"><div class="sn" id="tt">25</div><div class="sl">Total</div></div><div class="sb2"><div class="sn" id="ta" style="color:var(--accent2)">0</div><div class="sl">Done</div></div><div class="sb2"><div class="sn" id="tr2" style="color:var(--yellow)">25</div><div class="sl">Left</div></div></div>
 <div id="tqs"></div>
-<div class="tsw"><button class="sub" onclick="submitTest()">Submit Test 🚀</button></div>
+<div class="tsw"><button class="sub" onclick="submitTest()">Submit 🚀</button></div>
 </div>
 
-<!-- CHECKING -->
 <div class="page" id="page-checking">
 <div class="cp">
-<div class="tr"><svg width="130" height="130" viewBox="0 0 120 120"><defs><linearGradient id="tg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#22d3ee"/></linearGradient></defs><circle class="bg" cx="60" cy="60" r="54"/><circle class="fi" id="tCirc" cx="60" cy="60" r="54"/></svg><div class="tc"><div class="ts2" id="tNum">60</div><div class="tl2">seconds</div></div></div>
-<div class="ct">AI is checking your paper<span id="dots">...</span></div>
-<div class="cs">Generating personalized feedback ⚡</div>
+<div class="tr"><svg width="130" height="130" viewBox="0 0 120 120"><defs><linearGradient id="tg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#22d3ee"/></linearGradient></defs><circle class="bg" cx="60" cy="60" r="54"/><circle class="fi" id="tCirc" cx="60" cy="60" r="54"/></svg><div class="tc"><div class="ts2" id="tNum">60</div><div class="tl2">sec</div></div></div>
+<div class="ct">AI checking your paper<span id="dots">...</span></div>
+<div class="cs">Generating feedback ⚡</div>
 </div></div>
 
-<!-- RESULT -->
 <div class="page pb" id="page-result">
 <div class="rp">
 <div class="rh"><div class="re" id="rEmoji">🎉</div><div class="rs" id="rScore">0/25</div><div class="rl">AI Test Result</div><div class="rg" id="rGrade">—</div></div>
-<div class="ai-feedback-box" id="aiFeedbackBox">
-  <div class="aifb-title">✨ AI EXAMINER FEEDBACK</div>
-  <div id="aiFeedbackLoading" style="display:flex;align-items:center;gap:10px;color:var(--muted2);font-size:0.85rem;"><div class="aty"><span></span><span></span><span></span></div> Generating feedback...</div>
-  <div class="aifb-text" id="aiFeedbackText" style="display:none"></div>
-</div>
-<div class="rb2"><div class="bt">SCORE BY TOPIC</div><div id="rBreak"></div></div>
-<div class="ra"><div class="bt">QUESTION REVIEW</div><div id="rAns"></div></div>
+<div class="ai-fb"><div class="ai-fb-t">✨ AI EXAMINER FEEDBACK</div>
+<div id="aiFBL" style="display:flex;align-items:center;gap:10px;color:var(--muted2);font-size:0.85rem;"><div class="aty"><span></span><span></span><span></span></div> Generating...</div>
+<div class="ai-fb-tx" id="aiFBT" style="display:none"></div></div>
+<div class="rb2"><div class="bt">BY TOPIC</div><div id="rBreak"></div></div>
+<div class="ra"><div class="bt">REVIEW</div><div id="rAns"></div></div>
 <div style="padding:0 0 8px">
-<button class="cb2" onclick="copyRes()">📋 Copy Result</button>
+<button class="cb2" onclick="copyRes()">📋 Copy</button>
 <button class="rtb" onclick="retryT()">🔄 New Test</button>
 <button class="hb" onclick="goHome()">🏠 Home</button>
 </div></div></div>
 
-<!-- PROFILE -->
 <div class="page pb" id="page-profile">
 <div class="pp">
 <div class="ph">
   <div class="pap" id="pAv">?</div>
   <div class="pn" id="pName">Loading...</div>
   <div class="pe" id="pEmail">—</div>
-  <div class="plb" id="pLang">🇬🇧 English</div>
+  <div class="plb" id="pLangBadge">🇬🇧 English</div>
+</div>
+<div class="ppb">
+  <div class="pst">LANGUAGE</div>
+  <div class="lang-sel-row">
+    <div class="lang-opt" id="plo-en" onclick="changeLang('en')">🇬🇧 English</div>
+    <div class="lang-opt" id="plo-hi" onclick="changeLang('hi')">🇮🇳 Hinglish</div>
+  </div>
 </div>
 <div class="ps">
   <div class="psb"><div class="psn" id="stL" style="color:var(--accent2)">0</div><div class="psl">Done</div></div>
@@ -403,680 +388,369 @@ textarea.ce{width:100%;background:#07070c;border:none;outline:none;color:#e2e8f0
 <button class="sob" onclick="sOut()">🚪 Sign Out</button>
 </div></div>
 
-<!-- ASK AI -->
 <div class="page pb" id="page-ai">
 <div class="lesson-topbar"><button class="back-btn" onclick="goHome()">← Back</button><div class="ltb"><h2>✨ Ask AI</h2><span>Ask anything about coding</span></div></div>
 <div class="aip">
-  <div class="quick-chips" id="quickChips">
+  <div class="chips">
     <div class="chip" onclick="useChip('Explain this concept simply')">💡 Explain</div>
     <div class="chip" onclick="useChip('Give me a code example')">💻 Example</div>
     <div class="chip" onclick="useChip('Quiz me on this topic')">📝 Quiz me</div>
     <div class="chip" onclick="useChip('Help me debug this code')">🔧 Debug</div>
-    <div class="chip" onclick="useChip('What are best practices?')">⭐ Best practices</div>
   </div>
   <div class="aim" id="aiM">
-    <div class="aimsg bot"><div class="aib">Hey! 👋 I'm your AI coding assistant.<br><br>I can help with <strong>HTML, CSS, JS, Python, C++, Java, SQL, Bash</strong> — anything!<br><br>Ask me anything 🚀</div></div>
+    <div class="aimsg bot"><div class="aib">Hey! 👋 I'm your AI coding assistant.<br><br>Help with <strong>HTML, CSS, JS, Python, C++, Java, SQL, Bash, English</strong> and more!<br><br>Ask anything 🚀</div></div>
   </div>
   <div class="aiw">
-    <textarea class="aii" id="aiIn" placeholder="Ask anything about coding..." rows="1" onkeydown="aiKD(event)"></textarea>
+    <textarea class="aii" id="aiIn" placeholder="Ask anything..." rows="1" onkeydown="aiKD(event)"></textarea>
     <button class="ais" onclick="sendAI()">➤</button>
   </div>
 </div></div>
 
-<!-- BOTTOM NAV -->
 <div class="bnav" id="bnav" style="display:none">
 <div class="bni active" id="bn-home" onclick="goHome()"><div class="bnic">🏠</div><div class="bnl">Home</div></div>
 <div class="bni" id="bn-test" onclick="startTest()"><div class="bnic">📝</div><div class="bnl">Test</div></div>
 <div class="bni" id="bn-ai" onclick="showPage('ai')"><div class="bnic">✨</div><div class="bnl">Ask AI</div></div>
 <div class="bni" id="bn-profile" onclick="showPage('profile')"><div class="bnic">👤</div><div class="bnl">Profile</div></div>
 </div>
-
 <script>
-// ===== FIREBASE (exact same as original working file) =====
-const FC={apiKey:"AIzaSyAW8ewW1zErmKdo5NBuoyF0DuTEaVcR3eI",authDomain:"learn-coding-79e2d.firebaseapp.com",projectId:"learn-coding-79e2d",storageBucket:"learn-coding-79e2d.firebasestorage.app",messagingSenderId:"255675555787",appId:"1:255675555787:web:ea502a6fbc4c62903fe04e"};
+var FC={apiKey:"AIzaSyAW8ewW1zErmKdo5NBuoyF0DuTEaVcR3eI",authDomain:"learn-coding-79e2d.firebaseapp.com",projectId:"learn-coding-79e2d",storageBucket:"learn-coding-79e2d.firebasestorage.app",messagingSenderId:"255675555787",appId:"1:255675555787:web:ea502a6fbc4c62903fe04e"};
 firebase.initializeApp(FC);
-const auth=firebase.auth(),db=firebase.firestore(),gp=new firebase.auth.GoogleAuthProvider();
-let CU=null,UP=null,selLang_='en',selLv_=0,confirmResult=null;
+var auth=firebase.auth(),db=firebase.firestore(),gp=new firebase.auth.GoogleAuthProvider();
+var CU=null,UP=null,selLang_='en',selLv_=0,confirmResult=null,signupLang='en';
 
-auth.getRedirectResult().then(async result=>{
-  if(result&&result.user){
-    CU=result.user;
-    const d=await db.collection('users').doc(CU.uid).get();
-    if(d.exists){UP=d.data();afterLogin();}
-    else{showPage('setup');document.getElementById('bnav').style.display='none';}
-  }
-}).catch(e=>{console.log('Redirect:',e);});
-
-let authResolved=false;
-auth.onAuthStateChanged(async u=>{
-  if(u&&!authResolved){
-    authResolved=true;CU=u;
-    const d=await db.collection('users').doc(u.uid).get();
-    if(d.exists){UP=d.data();afterLogin();}
-    else{showPage('setup');document.getElementById('bnav').style.display='none';}
-  } else if(!u&&!authResolved){
-    authResolved=true;
-    const isGuest=UP&&UP.name==='Guest';
-    if(!isGuest){showPage('login');document.getElementById('bnav').style.display='none';}
-  }
+// ===== BACK BUTTON FIX =====
+var PH=['login'];
+function pushH(id){if(PH[PH.length-1]!==id){PH.push(id);history.pushState({page:id},'','');}}
+window.addEventListener('popstate',function(){
+  PH.pop();
+  var prev=PH[PH.length-1]||'login';
+  var loggedIn=CU||(UP&&UP.name==='Guest');
+  if(!loggedIn){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});document.getElementById('page-login').classList.add('active');return;}
+  if(prev==='login')prev='home';
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+  document.getElementById('page-'+prev).classList.add('active');
+  document.querySelectorAll('.bni').forEach(function(b){b.classList.remove('active');});
+  var m={home:'bn-home',test:'bn-test',ai:'bn-ai',profile:'bn-profile'};
+  if(m[prev])document.getElementById(m[prev]).classList.add('active');
 });
 
-let authMode='login';
+// ===== AUTH =====
+auth.getRedirectResult().then(async function(r){
+  if(r&&r.user){CU=r.user;var d=await db.collection('users').doc(CU.uid).get();if(d.exists){UP=d.data();afterLogin();}else{showPage('setup');}}
+}).catch(function(e){console.log(e);});
+
+var authResolved=false;
+auth.onAuthStateChanged(async function(u){
+  if(u&&!authResolved){authResolved=true;CU=u;var d=await db.collection('users').doc(u.uid).get();if(d.exists){UP=d.data();afterLogin();}else{showPage('setup');}
+  }else if(!u&&!authResolved){authResolved=true;if(!(UP&&UP.name==='Guest')){showPage('login');}}
+});
+
+var authMode='login';
 function switchTab(mode){
-  authMode=mode;
-  var isLogin=mode==='login';
-  document.getElementById('tabLogin').classList.toggle('active',isLogin);
-  document.getElementById('tabSignup').classList.toggle('active',!isLogin);
-  document.getElementById('nameField').style.display=isLogin?'none':'block';
-  document.getElementById('authBtn').textContent=isLogin?'Sign In':'Create Account';
+  authMode=mode;var il=mode==='login';
+  document.getElementById('tabLogin').classList.toggle('active',il);
+  document.getElementById('tabSignup').classList.toggle('active',!il);
+  document.getElementById('signupExtras').style.display=il?'none':'block';
+  document.getElementById('authBtn').textContent=il?'Sign In':'Create Account';
   document.getElementById('authError').style.display='none';
 }
+function selSL(l){signupLang=l;document.getElementById('lo-en').classList.toggle('selected',l==='en');document.getElementById('lo-hi').classList.toggle('selected',l==='hi');}
 
 async function doAuth(){
   var email=document.getElementById('authEmail').value.trim();
   var pass=document.getElementById('authPass').value.trim();
-  var name=document.getElementById('authName').value.trim();
-  var errEl=document.getElementById('authError');
-  var btn=document.getElementById('authBtn');
+  var nameEl=document.getElementById('authName');
+  var name=nameEl?nameEl.value.trim():'';
+  var errEl=document.getElementById('authError');var btn=document.getElementById('authBtn');
   if(!email||!pass){errEl.textContent='Please enter email and password!';errEl.style.display='block';return;}
   if(authMode==='signup'&&!name){errEl.textContent='Please enter your name!';errEl.style.display='block';return;}
   btn.textContent='Please wait...';btn.disabled=true;errEl.style.display='none';
   try{
     if(authMode==='login'){await auth.signInWithEmailAndPassword(email,pass);}
-    else{var r=await auth.createUserWithEmailAndPassword(email,pass);await r.user.updateProfile({displayName:name});}
+    else{var r=await auth.createUserWithEmailAndPassword(email,pass);await r.user.updateProfile({displayName:name});selLang_=signupLang;}
   }catch(e){
     btn.textContent=authMode==='login'?'Sign In':'Create Account';btn.disabled=false;
-    var msgs={'auth/user-not-found':'Email not registered!','auth/wrong-password':'Wrong password!','auth/email-already-in-use':'Email already used!','auth/weak-password':'Password needs 6+ characters!','auth/invalid-email':'Invalid email!','auth/invalid-credential':'Wrong email or password!'};
+    var msgs={'auth/user-not-found':'Email not registered!','auth/wrong-password':'Wrong password!','auth/email-already-in-use':'Email already used!','auth/weak-password':'Password needs 6+ chars!','auth/invalid-email':'Invalid email!','auth/invalid-credential':'Wrong email or password!'};
     errEl.textContent=msgs[e.code]||'Error: '+e.message;errEl.style.display='block';
   }
 }
 
 async function gLogin(){
   try{await auth.signInWithPopup(gp);}
-  catch(e){
-    try{await auth.signInWithRedirect(gp);}
-    catch(e2){document.getElementById('authError').textContent='Google login failed. Try email.';document.getElementById('authError').style.display='block';}
-  }
+  catch(e){try{await auth.signInWithRedirect(gp);}catch(e2){document.getElementById('authError').textContent='Google login failed.';document.getElementById('authError').style.display='block';}}
 }
 
 function showPhoneLogin(){
-  showPage('phone');
-  document.getElementById('phoneInputSection').style.display='block';
-  document.getElementById('otpSection').style.display='none';
-  document.getElementById('phoneError').style.display='none';
-  document.getElementById('recaptcha-container').innerHTML='';
+  showPage('phone');document.getElementById('phoneInputSection').style.display='block';
+  document.getElementById('otpSection').style.display='none';document.getElementById('recaptcha-container').innerHTML='';
 }
-
 async function sendOTP(){
-  var phone=document.getElementById('phoneNumber').value.trim();
-  var errEl=document.getElementById('phoneError');
-  if(!phone){errEl.textContent='Please enter phone number';errEl.style.display='block';return;}
+  var phone=document.getElementById('phoneNumber').value.trim();var errEl=document.getElementById('phoneError');
+  if(!phone){errEl.textContent='Enter phone number';errEl.style.display='block';return;}
   document.getElementById('sendOtpBtn').textContent='Sending...';document.getElementById('sendOtpBtn').disabled=true;
   try{
     window.recaptchaVerifier=new firebase.auth.RecaptchaVerifier('recaptcha-container',{size:'normal',callback:function(){}});
     confirmResult=await auth.signInWithPhoneNumber(phone,window.recaptchaVerifier);
     document.getElementById('phoneSent').textContent=phone;
-    document.getElementById('phoneInputSection').style.display='none';
-    document.getElementById('otpSection').style.display='block';
-  }catch(e){
-    errEl.textContent='Failed: '+e.message;errEl.style.display='block';
-    document.getElementById('sendOtpBtn').textContent='Send OTP';document.getElementById('sendOtpBtn').disabled=false;
-  }
+    document.getElementById('phoneInputSection').style.display='none';document.getElementById('otpSection').style.display='block';
+  }catch(e){errEl.textContent='Failed: '+e.message;errEl.style.display='block';document.getElementById('sendOtpBtn').textContent='Send OTP';document.getElementById('sendOtpBtn').disabled=false;}
 }
-
-function otpMove(i){var val=document.getElementById('otp'+i).value;if(val&&i<5)document.getElementById('otp'+(i+1)).focus();}
-
+function otpMove(i){var v=document.getElementById('otp'+i).value;if(v&&i<5)document.getElementById('otp'+(i+1)).focus();}
 async function verifyOTP(){
   var code='';for(var i=0;i<6;i++)code+=document.getElementById('otp'+i).value;
   var errEl=document.getElementById('otpError');
-  if(code.length<6){errEl.textContent='Enter complete 6-digit OTP';errEl.style.display='block';return;}
-  try{await confirmResult.confirm(code);}
-  catch(e){errEl.textContent='Invalid OTP.';errEl.style.display='block';}
+  if(code.length<6){errEl.textContent='Enter full 6-digit OTP';errEl.style.display='block';return;}
+  try{await confirmResult.confirm(code);}catch(e){errEl.textContent='Invalid OTP';errEl.style.display='block';}
 }
 
 function skipLogin(){
-  CU=null;
-  var ls=localStorage;
+  CU=null;var ls=localStorage;
   UP={name:'Guest',email:'',lang:'en',level:0,
-    progress:JSON.parse(ls.getItem('gp')||'{}'),
-    testCount:parseInt(ls.getItem('gtc')||'0'),
-    bestScore:parseInt(ls.getItem('gbs')||'0'),
-    streak:parseInt(ls.getItem('gst')||'0'),
-    lastActive:ls.getItem('gla')||'',
-    badges:JSON.parse(ls.getItem('gbg')||'[]'),
-    testHistory:JSON.parse(ls.getItem('gth')||'[]')
-  };
-  document.getElementById('bnav').style.display='flex';
-  document.getElementById('uBtn').style.display='none';
+    progress:JSON.parse(ls.getItem('gp')||'{}'),testCount:parseInt(ls.getItem('gtc')||'0'),
+    bestScore:parseInt(ls.getItem('gbs')||'0'),streak:parseInt(ls.getItem('gst')||'0'),
+    lastActive:ls.getItem('gla')||'',badges:JSON.parse(ls.getItem('gbg')||'[]'),testHistory:JSON.parse(ls.getItem('gth')||'[]')};
+  document.getElementById('bnav').style.display='flex';document.getElementById('uBtn').style.display='none';
   document.getElementById('guestBanner').style.display='flex';
-  updStreak();updHomeProg();updHomeStats();showPage('home');
+  updStreak();updHP();updHS();showPage('home');
 }
+function sOut(){if(confirm('Sign out?')){localStorage.clear();location.reload();}}
 
-function sOut(){if(confirm('Sign out?')){localStorage.clear();auth.signOut();}}
-
-function selLang(l){selLang_=l;['hi','en'].forEach(function(x){document.getElementById('l'+x).classList.remove('selected');});document.getElementById('l'+l).classList.add('selected');}
+function selLang(l){selLang_=l;['lsen','lshi'].forEach(function(x){document.getElementById(x).classList.remove('selected');});document.getElementById('ls'+l).classList.add('selected');}
 function selLv(v){selLv_=v;[0,1,2].forEach(function(i){document.getElementById('lv'+i).classList.remove('selected');});document.getElementById('lv'+v).classList.add('selected');}
 function sNext(s){document.querySelectorAll('.setup-step').forEach(function(e){e.classList.remove('active');});document.getElementById('ss'+s).classList.add('active');document.querySelectorAll('.setup-dot').forEach(function(d,i){d.classList.toggle('active',i<=s);});}
 
 async function finSetup(){
   if(!CU)return;
   var today=new Date().toDateString();
-  UP={name:CU.displayName||CU.phoneNumber||'Coder',email:CU.email||'',photo:CU.photoURL||'',lang:selLang_,level:selLv_,progress:{},testCount:0,bestScore:0,streak:1,lastActive:today,badges:[],testHistory:[],createdAt:new Date()};
-  await db.collection('users').doc(CU.uid).set(UP);
-  afterLogin();
+  UP={name:CU.displayName||CU.phoneNumber||'Coder',email:CU.email||'',lang:selLang_||signupLang||'en',level:selLv_,progress:{},testCount:0,bestScore:0,streak:1,lastActive:today,badges:[],testHistory:[]};
+  await db.collection('users').doc(CU.uid).set(UP);afterLogin();
 }
 
 function afterLogin(){
-  document.getElementById('bnav').style.display='flex';
-  document.getElementById('uBtn').style.display='flex';
+  document.getElementById('bnav').style.display='flex';document.getElementById('uBtn').style.display='flex';
   document.getElementById('guestBanner').style.display='none';
-  var n=UP.name||CU.displayName||'Coder';
-  document.getElementById('uAv').textContent=n[0].toUpperCase();
+  var n=UP.name||'Coder';document.getElementById('uAv').textContent=n[0].toUpperCase();
   document.getElementById('hName').textContent=n.split(' ')[0];
-  updStreak();loadProfile();updHomeProg();updHomeStats();showPage('home');
+  updStreak();loadProfile();updHP();updHS();showPage('home');
 }
 
-// ===== STREAK =====
+async function changeLang(l){
+  if(!UP)return;UP.lang=l;await saveUD();
+  document.getElementById('pLangBadge').textContent=l==='hi'?'🇮🇳 Hinglish':'🇬🇧 English';
+  document.getElementById('plo-en').classList.toggle('selected',l==='en');
+  document.getElementById('plo-hi').classList.toggle('selected',l==='hi');
+}
+
 function updStreak(){
   if(!UP)return;
-  var today=new Date().toDateString();
-  var last=UP.lastActive||'';
-  var yesterday=new Date(Date.now()-86400000).toDateString();
-  if(last===today){}
-  else if(last===yesterday){UP.streak=(UP.streak||0)+1;UP.lastActive=today;saveUD();}
+  var today=new Date().toDateString(),last=UP.lastActive||'',yesterday=new Date(Date.now()-86400000).toDateString();
+  if(last===today){}else if(last===yesterday){UP.streak=(UP.streak||0)+1;UP.lastActive=today;saveUD();}
   else{UP.streak=1;UP.lastActive=today;saveUD();}
-  var s=UP.streak||1;
-  document.getElementById('streakCount').textContent=s;
-  document.getElementById('streakBadge').style.display=s>0?'flex':'none';
-  checkBadges();
+  var s=UP.streak||1;document.getElementById('streakCount').textContent=s;
+  document.getElementById('streakBadge').style.display=s>0?'flex':'none';checkBadges();
 }
 
-// ===== BADGES =====
 var BADGES=[
   {id:'first_lesson',icon:'📚',name:'First Lesson',check:function(u){return Object.values(u.progress||{}).some(function(v){return v>0;});}},
   {id:'first_test',icon:'📝',name:'First Test',check:function(u){return (u.testCount||0)>=1;}},
   {id:'streak3',icon:'🔥',name:'3-Day Streak',check:function(u){return (u.streak||0)>=3;}},
   {id:'streak7',icon:'⚡',name:'7-Day Streak',check:function(u){return (u.streak||0)>=7;}},
   {id:'html_done',icon:'🌐',name:'HTML Master',check:function(u){return (u.progress||{}).html>=100;}},
-  {id:'css_done',icon:'🎨',name:'CSS Master',check:function(u){return (u.progress||{}).css>=100;}},
-  {id:'js_done',icon:'⚡',name:'JS Master',check:function(u){return (u.progress||{}).js>=100;}},
   {id:'score90',icon:'🏆',name:'Top Scorer',check:function(u){return (u.bestScore||0)>=90;}},
   {id:'tests5',icon:'🧪',name:'Test Champ',check:function(u){return (u.testCount||0)>=5;}},
   {id:'perfect',icon:'💎',name:'Perfect Score',check:function(u){return (u.bestScore||0)>=100;}},
 ];
-
 function checkBadges(){
-  if(!UP)return;
-  var earned=UP.badges||[];var changed=false;
+  if(!UP)return;var earned=UP.badges||[];var changed=false;
   BADGES.forEach(function(b){if(!earned.includes(b.id)&&b.check(UP)){earned.push(b.id);changed=true;}});
-  if(changed){UP.badges=earned;saveUD();}
-  renderBadges();
+  if(changed){UP.badges=earned;saveUD();}renderBadges();
 }
-
 function renderBadges(){
-  var earned=UP?UP.badges||[]:[];
-  var el=document.getElementById('badgesGrid');if(!el)return;
+  var earned=UP?UP.badges||[]:[];var el=document.getElementById('badgesGrid');if(!el)return;
   el.innerHTML=BADGES.map(function(b){return '<div class="badge-item '+(earned.includes(b.id)?'earned':'')+'"><div class="badge-icon">'+b.icon+'</div><div class="badge-name">'+b.name+'</div></div>';}).join('');
 }
 
-// ===== SAVE =====
 async function saveUD(){
   if(!UP)return;
-  if(CU){
-    try{await db.collection('users').doc(CU.uid).update({streak:UP.streak||1,lastActive:UP.lastActive,badges:UP.badges||[],testCount:UP.testCount||0,bestScore:UP.bestScore||0,progress:UP.progress||{},testHistory:UP.testHistory||[]});}catch(e){}
-  } else {
-    var ls=localStorage;
-    ls.setItem('gp',JSON.stringify(UP.progress||{}));
-    ls.setItem('gtc',UP.testCount||0);
-    ls.setItem('gbs',UP.bestScore||0);
-    ls.setItem('gst',UP.streak||0);
-    ls.setItem('gla',UP.lastActive||'');
-    ls.setItem('gbg',JSON.stringify(UP.badges||[]));
-    ls.setItem('gth',JSON.stringify(UP.testHistory||[]));
-  }
+  if(CU){try{await db.collection('users').doc(CU.uid).update({streak:UP.streak||1,lastActive:UP.lastActive,badges:UP.badges||[],testCount:UP.testCount||0,bestScore:UP.bestScore||0,progress:UP.progress||{},testHistory:UP.testHistory||[],lang:UP.lang||'en'});}catch(e){}}
+  else{var ls=localStorage;ls.setItem('gp',JSON.stringify(UP.progress||{}));ls.setItem('gtc',UP.testCount||0);ls.setItem('gbs',UP.bestScore||0);ls.setItem('gst',UP.streak||0);ls.setItem('gla',UP.lastActive||'');ls.setItem('gbg',JSON.stringify(UP.badges||[]));ls.setItem('gth',JSON.stringify(UP.testHistory||[]));}
 }
 
-// ===== PROFILE =====
 function loadProfile(){
-  if(!UP)return;
-  var n=UP.name||'Coder';
-  document.getElementById('pName').textContent=n;
-  document.getElementById('pEmail').textContent=UP.email||'—';
+  if(!UP)return;var n=UP.name||'Coder';
+  document.getElementById('pName').textContent=n;document.getElementById('pEmail').textContent=UP.email||'—';
   document.getElementById('pAv').textContent=n[0].toUpperCase();
   if(CU&&CU.photoURL){var img=document.createElement('img');img.src=CU.photoURL;img.className='pa';var av=document.getElementById('pAv');if(av)av.replaceWith(img);}
-  document.getElementById('pLang').textContent=UP.lang==='hi'?'🇮🇳 Hinglish':'🇬🇧 English';
-  document.getElementById('stT').textContent=UP.testCount||0;
-  document.getElementById('stS').textContent=(UP.bestScore||0)+'%';
-  var p=UP.progress||{};
-  var dn=Object.values(p).filter(function(v){return v>=100;}).length;
-  document.getElementById('stL').textContent=dn;
-  var lc={html:'#f97316',css:'#3b82f6',js:'#fbbf24',python:'#4ade80',cpp:'#f472b6',java:'#f97316',sql:'#22d3ee',bash:'#a78bfa',logic:'#6366f1'};
-  document.getElementById('pLP').innerHTML=Object.keys(lc).map(function(l){var pct=p[l]||0;return '<div class="br"><div class="bl" style="color:'+lc[l]+'">'+l.toUpperCase()+'</div><div class="bbw"><div class="bb" style="width:'+pct+'%;background:'+lc[l]+'"></div></div><div class="bsc">'+pct+'%</div></div>';}).join('');
-  renderBadges();renderTestHistory();
-}
-
-function renderTestHistory(){
-  var hist=UP?UP.testHistory||[]:[];
-  var el=document.getElementById('testHistoryList');if(!el)return;
+  var l=UP.lang||'en';document.getElementById('pLangBadge').textContent=l==='hi'?'🇮🇳 Hinglish':'🇬🇧 English';
+  document.getElementById('plo-en').classList.toggle('selected',l==='en');document.getElementById('plo-hi').classList.toggle('selected',l==='hi');
+  document.getElementById('stT').textContent=UP.testCount||0;document.getElementById('stS').textContent=(UP.bestScore||0)+'%';
+  var p=UP.progress||{};var dn=Object.values(p).filter(function(v){return v>=100;}).length;document.getElementById('stL').textContent=dn;
+  var lc={html:'#f97316',css:'#3b82f6',js:'#fbbf24',python:'#4ade80',cpp:'#f472b6',java:'#f97316',sql:'#22d3ee',bash:'#a78bfa',logic:'#6366f1',english:'#f43f5e'};
+  document.getElementById('pLP').innerHTML=Object.keys(lc).map(function(k){var pct=p[k]||0;return '<div class="br"><div class="bl" style="color:'+lc[k]+'">'+k.toUpperCase()+'</div><div class="bbw"><div class="bb" style="width:'+pct+'%;background:'+lc[k]+'"></div></div><div class="bsc">'+pct+'%</div></div>';}).join('');
+  renderBadges();
+  var hist=UP.testHistory||[];var el=document.getElementById('testHistoryList');
   if(!hist.length){el.innerHTML='<div style="font-size:0.8rem;color:var(--muted2);text-align:center;padding:10px">No tests yet</div>';return;}
   var gc={A:'var(--green)',B:'var(--accent2)',C:'var(--yellow)',D:'var(--orange)',F:'var(--red)'};
   el.innerHTML=hist.slice().reverse().slice(0,5).map(function(h){var c=gc[h.grade[0]]||'var(--text)';return '<div class="th-item"><div><div class="th-score" style="color:'+c+'">'+h.score+'/25 ('+h.pct+'%)</div><div class="th-date">'+h.date+'</div></div><div class="th-grade" style="background:'+c+'22;color:'+c+'">'+h.grade+'</div></div>';}).join('');
 }
-
-function updHomeStats(){
-  if(!UP)return;
-  var p=UP.progress||{};
-  var dn=Object.values(p).filter(function(v){return v>=100;}).length;
-  document.getElementById('stHomeLessons').textContent=dn;
-  document.getElementById('stHomeStreak').textContent=(UP.streak||0)+'🔥';
-  document.getElementById('stHomeBest').textContent=(UP.bestScore||0)+'%';
+function updHS(){
+  if(!UP)return;var p=UP.progress||{};
+  document.getElementById('stHL').textContent=Object.values(p).filter(function(v){return v>=100;}).length;
+  document.getElementById('stHS').textContent=(UP.streak||0)+'🔥';document.getElementById('stHB').textContent=(UP.bestScore||0)+'%';
 }
-
 async function saveProg(lang,pct){
-  if(!UP)return;
-  if(!UP.progress)UP.progress={};
-  UP.progress[lang]=Math.max(UP.progress[lang]||0,pct);
-  await saveUD();updHomeProg();checkBadges();
+  if(!UP)return;if(!UP.progress)UP.progress={};
+  UP.progress[lang]=Math.max(UP.progress[lang]||0,pct);await saveUD();updHP();checkBadges();
 }
-
-function updHomeProg(){
+function updHP(){
   var p=UP?UP.progress||{}:{};
-  ['html','css','js','python','cpp','java','sql','bash','logic'].forEach(function(l){
+  ['html','css','js','python','cpp','java','sql','bash','logic','english'].forEach(function(l){
     var e=document.getElementById('lp-'+l);var d=document.getElementById('dn-'+l);
-    if(e)e.style.width=(p[l]||0)+'%';
-    if(d)d.style.display=(p[l]||0)>=100?'block':'none';
-  });
-  updHomeStats();
+    if(e)e.style.width=(p[l]||0)+'%';if(d)d.style.display=(p[l]||0)>=100?'block':'none';
+  });updHS();
 }
 
-// ===== NAV =====
 var CP='login';
 function showPage(id){
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
-  document.getElementById('page-'+id).classList.add('active');
-  CP=id;
+  document.getElementById('page-'+id).classList.add('active');CP=id;
   document.querySelectorAll('.bni').forEach(function(b){b.classList.remove('active');});
   var m={home:'bn-home',test:'bn-test',ai:'bn-ai',profile:'bn-profile'};
   if(m[id])document.getElementById(m[id]).classList.add('active');
-  window.scrollTo(0,0);
-  if(id==='profile')loadProfile();
+  window.scrollTo(0,0);pushH(id);if(id==='profile')loadProfile();
 }
-function goHome(){showPage('home');updHomeProg();}
+function goHome(){showPage('home');updHP();}
 
-// ===== LESSONS =====
+var CL=null,CS=0,TI=null;
+function openL(lang){CL=lang;CS=0;showPage('lesson');renderSec();}
+
 var LS={
 html:{color:"#f97316",badge:"HTML",sections:[
-{title:"HTML Basics",badge:"LESSON 01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>HTML = <strong>HyperText Markup Language</strong>. It gives every webpage its <em>structure</em>.</p></div><div class='cw'><div class='ch'><span>hello.html</span></div><div class='cb'><span class='tg'>&lt;!DOCTYPE html&gt;</span><br><span class='tg'>&lt;html&gt;&lt;head&gt;&lt;title&gt;</span>My Page<span class='tg'>&lt;/title&gt;&lt;/head&gt;</span><br><span class='tg'>&lt;body&gt;</span><br>&nbsp;&nbsp;<span class='tg'>&lt;h1&gt;</span>Hello World!<span class='tg'>&lt;/h1&gt;</span><br>&nbsp;&nbsp;<span class='tg'>&lt;p&gt;</span>First page.<span class='tg'>&lt;/p&gt;</span><br><span class='tg'>&lt;/body&gt;&lt;/html&gt;</span></div></div><div class='tip'>Every opening tag like &lt;h1&gt; needs a closing tag &lt;/h1&gt;</div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"html\",0)'>Run</button></div><textarea class='ce' id='ed-html-0'>&lt;h1&gt;My Name is Shoav&lt;/h1&gt;\n&lt;p&gt;I am a developer.&lt;/p&gt;</textarea><div class='pf2'><iframe id='pv-html-0'></iframe></div></div>"},
-{title:"Common Tags",badge:"LESSON 02",content:"<div class='ic'><div class='lb'>TAGS</div><p>Links, images, buttons, lists — the most common HTML tags.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"html\",1)'>Run</button></div><textarea class='ce' id='ed-html-1'>&lt;h2&gt;My Skills&lt;/h2&gt;\n&lt;ul&gt;\n  &lt;li&gt;HTML&lt;/li&gt;\n  &lt;li&gt;CSS&lt;/li&gt;\n  &lt;li&gt;JavaScript&lt;/li&gt;\n&lt;/ul&gt;\n&lt;a href=\"https://google.com\"&gt;Visit Google!&lt;/a&gt;</textarea><div class='pf2'><iframe id='pv-html-1'></iframe></div></div>"},
-{title:"Forms",badge:"LESSON 03",content:"<div class='ic'><div class='lb'>FORMS</div><p>To get data from users — login forms, contact forms.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"html\",2)'>Run</button></div><textarea class='ce' id='ed-html-2'>&lt;style&gt;\n  input,button{display:block;margin:8px 0;padding:9px;border-radius:8px;border:1px solid #ccc;}\n  button{background:#6366f1;color:white;border:none;cursor:pointer;}\n&lt;/style&gt;\n&lt;h3&gt;Contact Form&lt;/h3&gt;\n&lt;input type=\"text\" placeholder=\"Your Name\"&gt;\n&lt;input type=\"email\" placeholder=\"Email\"&gt;\n&lt;button&gt;Submit&lt;/button&gt;</textarea><div class='pf2'><iframe id='pv-html-2'></iframe></div></div>"}
+{title:"HTML Basics",badge:"L01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>HTML = <strong>HyperText Markup Language</strong>. The skeleton of every webpage.</p></div><div class='cw'><div class='ch'><span>hello.html</span></div><div class='cb'><span class='tg'>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;</span>Page<span class='tg'>&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;</span>Hello!<span class='tg'>&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</span></div></div><div class='tip'>Every opening tag needs a closing tag!</div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"html\",0)'>Run</button></div><textarea class='ce' id='ed-html-0'>&lt;h1&gt;My Name is Shoav&lt;/h1&gt;\n&lt;p&gt;I am a developer.&lt;/p&gt;\n&lt;strong&gt;Bold text!&lt;/strong&gt;</textarea><div class='pf2'><iframe id='pv-html-0'></iframe></div></div>"},
+{title:"Common Tags",badge:"L02",content:"<div class='ic'><div class='lb'>TAGS</div><p>Links, images, buttons, lists — most used HTML tags.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"html\",1)'>Run</button></div><textarea class='ce' id='ed-html-1'>&lt;h2&gt;My Skills&lt;/h2&gt;\n&lt;ul&gt;&lt;li&gt;HTML&lt;/li&gt;&lt;li&gt;CSS&lt;/li&gt;&lt;li&gt;JS&lt;/li&gt;&lt;/ul&gt;\n&lt;a href=\"https://google.com\"&gt;Google&lt;/a&gt;\n&lt;br&gt;&lt;button&gt;Click Me!&lt;/button&gt;</textarea><div class='pf2'><iframe id='pv-html-1'></iframe></div></div>"},
+{title:"Forms",badge:"L03",content:"<div class='ic'><div class='lb'>FORMS</div><p>Collect data from users with forms.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"html\",2)'>Run</button></div><textarea class='ce' id='ed-html-2'>&lt;style&gt;input,button{display:block;margin:8px 0;padding:9px;border-radius:8px;border:1px solid #ccc}button{background:#6366f1;color:white;border:none}&lt;/style&gt;\n&lt;input type=\"text\" placeholder=\"Name\"&gt;\n&lt;input type=\"email\" placeholder=\"Email\"&gt;\n&lt;button&gt;Submit&lt;/button&gt;</textarea><div class='pf2'><iframe id='pv-html-2'></iframe></div></div>"},
+{title:"Semantic HTML",badge:"L04",content:"<div class='ic'><div class='lb'>SEMANTIC</div><p>Semantic tags give <strong>meaning</strong> — better for SEO and accessibility.</p></div><div class='cw'><div class='ch'><span>semantic.html</span></div><div class='cb'><span class='tg'>&lt;header&gt;</span>Site Header<span class='tg'>&lt;/header&gt;</span><br><span class='tg'>&lt;nav&gt;</span>Navigation<span class='tg'>&lt;/nav&gt;</span><br><span class='tg'>&lt;main&gt;&lt;article&gt;</span>Post<span class='tg'>&lt;/article&gt;&lt;/main&gt;</span><br><span class='tg'>&lt;footer&gt;</span>Footer<span class='tg'>&lt;/footer&gt;</span></div></div><div class='tip'>Use semantic tags instead of div for everything — Google loves it!</div>"},
+{title:"Tables",badge:"L05",content:"<div class='ic'><div class='lb'>TABLES</div><p>Display structured data in rows and columns.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"html\",4)'>Run</button></div><textarea class='ce' id='ed-html-4'>&lt;style&gt;table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:8px}th{background:#6366f1;color:white}&lt;/style&gt;\n&lt;table&gt;\n  &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Score&lt;/th&gt;&lt;/tr&gt;\n  &lt;tr&gt;&lt;td&gt;Shoav&lt;/td&gt;&lt;td&gt;95%&lt;/td&gt;&lt;/tr&gt;\n&lt;/table&gt;</textarea><div class='pf2'><iframe id='pv-html-4'></iframe></div></div>"},
+{title:"Meta & SEO",badge:"L06",content:"<div class='ic'><div class='lb'>META</div><p><strong>Meta tags</strong> tell browsers and search engines about your page.</p></div><div class='cw'><div class='ch'><span>head.html</span></div><div class='cb'><span class='tg'>&lt;head&gt;</span><br>&nbsp;&nbsp;<span class='tg'>&lt;meta</span> <span class='at'>charset</span>=<span class='str'>\"UTF-8\"</span><span class='tg'>&gt;</span><br>&nbsp;&nbsp;<span class='tg'>&lt;meta</span> <span class='at'>name</span>=<span class='str'>\"description\"</span> <span class='at'>content</span>=<span class='str'>\"My site\"</span><span class='tg'>&gt;</span><br>&nbsp;&nbsp;<span class='tg'>&lt;meta</span> <span class='at'>name</span>=<span class='str'>\"viewport\"</span> <span class='at'>content</span>=<span class='str'>\"width=device-width\"</span><span class='tg'>&gt;</span><br><span class='tg'>&lt;/head&gt;</span></div></div><div class='warn'>The viewport meta tag is ESSENTIAL for mobile websites!</div>"}
 ],qb:"html"},
 css:{color:"#3b82f6",badge:"CSS",sections:[
-{title:"CSS Basics",badge:"LESSON 01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p><strong>CSS is the design</strong> — colors, fonts, layout, animations.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"css\",0)'>Run</button></div><textarea class='ce' id='ed-css-0'>&lt;style&gt;\n  h1{color:#6366f1;font-family:Arial;}\n  p{background:#f0f0f0;padding:12px;border-radius:8px;}\n  button{background:#22d3ee;color:white;padding:10px 20px;border:none;border-radius:8px;cursor:pointer;}\n&lt;/style&gt;\n&lt;h1&gt;Coding by Shoav&lt;/h1&gt;\n&lt;p&gt;CSS styled this!&lt;/p&gt;\n&lt;button&gt;Click&lt;/button&gt;</textarea><div class='pf2'><iframe id='pv-css-0'></iframe></div></div>"},
-{title:"Selectors",badge:"LESSON 02",content:"<div class='ic'><div class='lb'>SELECTORS</div><p><strong>Tag</strong> targets all. <strong>Class (.)</strong> specific. <strong>ID (#)</strong> unique one.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"css\",1)'>Run</button></div><textarea class='ce' id='ed-css-1'>&lt;style&gt;\n  .card{background:#1e1e2e;color:white;padding:16px;border-radius:12px;margin:8px 0;}\n  .card.special{border:2px solid #6366f1;}\n  #title{font-size:22px;color:#22d3ee;}\n&lt;/style&gt;\n&lt;h2 id=\"title\"&gt;My Projects&lt;/h2&gt;\n&lt;div class=\"card\"&gt;Project One&lt;/div&gt;\n&lt;div class=\"card special\"&gt;Featured&lt;/div&gt;</textarea><div class='pf2'><iframe id='pv-css-1'></iframe></div></div>"},
-{title:"Flexbox",badge:"LESSON 03",content:"<div class='ic'><div class='lb'>FLEXBOX</div><p><strong>display:flex</strong> is the most powerful layout tool in CSS.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"css\",2)'>Run</button></div><textarea class='ce' id='ed-css-2'>&lt;style&gt;\n  .row{display:flex;gap:10px;padding:10px;}\n  .box{flex:1;background:#6366f1;color:white;padding:20px;border-radius:10px;text-align:center;}\n&lt;/style&gt;\n&lt;div class=\"row\"&gt;\n  &lt;div class=\"box\"&gt;Box 1&lt;/div&gt;\n  &lt;div class=\"box\"&gt;Box 2&lt;/div&gt;\n  &lt;div class=\"box\"&gt;Box 3&lt;/div&gt;\n&lt;/div&gt;</textarea><div class='pf2'><iframe id='pv-css-2'></iframe></div></div>"}
+{title:"CSS Basics",badge:"L01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p><strong>CSS = design</strong> — colors, fonts, layout, animations.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"css\",0)'>Run</button></div><textarea class='ce' id='ed-css-0'>&lt;style&gt;\n  h1{color:#6366f1;font-family:Arial}\n  p{background:#f0f0f0;padding:12px;border-radius:8px}\n  button{background:#22d3ee;color:white;padding:10px 20px;border:none;border-radius:8px;cursor:pointer}\n&lt;/style&gt;\n&lt;h1&gt;Coding by Shoav&lt;/h1&gt;\n&lt;p&gt;CSS styled this!&lt;/p&gt;\n&lt;button&gt;Click&lt;/button&gt;</textarea><div class='pf2'><iframe id='pv-css-0'></iframe></div></div>"},
+{title:"Selectors",badge:"L02",content:"<div class='ic'><div class='lb'>SELECTORS</div><p><strong>Tag</strong>=all. <strong>Class(.)</strong>=specific. <strong>ID(#)</strong>=unique.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"css\",1)'>Run</button></div><textarea class='ce' id='ed-css-1'>&lt;style&gt;\n  .card{background:#1e1e2e;color:white;padding:16px;border-radius:12px;margin:8px 0}\n  .special{border:2px solid #6366f1}\n  #title{color:#22d3ee;font-size:22px}\n&lt;/style&gt;\n&lt;h2 id=\"title\"&gt;Projects&lt;/h2&gt;\n&lt;div class=\"card\"&gt;Project One&lt;/div&gt;\n&lt;div class=\"card special\"&gt;Featured ⭐&lt;/div&gt;</textarea><div class='pf2'><iframe id='pv-css-1'></iframe></div></div>"},
+{title:"Flexbox",badge:"L03",content:"<div class='ic'><div class='lb'>FLEXBOX</div><p><strong>display:flex</strong> = most powerful layout tool.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"css\",2)'>Run</button></div><textarea class='ce' id='ed-css-2'>&lt;style&gt;\n  .row{display:flex;gap:10px;padding:10px}\n  .box{flex:1;background:#6366f1;color:white;padding:20px;border-radius:10px;text-align:center}\n&lt;/style&gt;\n&lt;div class=\"row\"&gt;\n  &lt;div class=\"box\"&gt;1&lt;/div&gt;\n  &lt;div class=\"box\"&gt;2&lt;/div&gt;\n  &lt;div class=\"box\"&gt;3&lt;/div&gt;\n&lt;/div&gt;</textarea><div class='pf2'><iframe id='pv-css-2'></iframe></div></div>"},
+{title:"Grid",badge:"L04",content:"<div class='ic'><div class='lb'>GRID</div><p>CSS Grid = 2D layouts — rows AND columns.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"css\",3)'>Run</button></div><textarea class='ce' id='ed-css-3'>&lt;style&gt;\n  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:8px}\n  .cell{background:#6366f1;color:white;padding:16px;border-radius:8px;text-align:center}\n  .wide{grid-column:span 2;background:#22d3ee;color:#000}\n&lt;/style&gt;\n&lt;div class=\"grid\"&gt;\n  &lt;div class=\"cell wide\"&gt;Wide&lt;/div&gt;\n  &lt;div class=\"cell\"&gt;C&lt;/div&gt;\n  &lt;div class=\"cell\"&gt;D&lt;/div&gt;\n  &lt;div class=\"cell\"&gt;E&lt;/div&gt;\n&lt;/div&gt;</textarea><div class='pf2'><iframe id='pv-css-3'></iframe></div></div>"},
+{title:"Animations",badge:"L05",content:"<div class='ic'><div class='lb'>ANIMATIONS</div><p>CSS animations with <strong>@keyframes</strong> and <strong>transition</strong>.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"css\",4)'>Run</button></div><textarea class='ce' id='ed-css-4'>&lt;style&gt;\n  @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}\n  .btn{background:#6366f1;color:white;padding:14px 28px;border:none;border-radius:12px;cursor:pointer;animation:pulse 1.5s infinite;font-size:16px}\n  .box{width:60px;height:60px;background:#22d3ee;border-radius:8px;transition:transform 0.3s;margin:10px}\n  .box:hover{transform:rotate(45deg)}\n&lt;/style&gt;\n&lt;button class=\"btn\"&gt;Pulsing!&lt;/button&gt;\n&lt;div class=\"box\"&gt;&lt;/div&gt;</textarea><div class='pf2'><iframe id='pv-css-4'></iframe></div></div>"},
+{title:"Responsive",badge:"L06",content:"<div class='ic'><div class='lb'>RESPONSIVE</div><p><strong>Media queries</strong> make sites look good on all screens.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"css\",5)'>Run</button></div><textarea class='ce' id='ed-css-5'>&lt;style&gt;\n  :root{--main:#6366f1}\n  .card{background:var(--main);color:white;padding:20px;border-radius:12px;text-align:center}\n  @media(max-width:600px){.card{background:#f97316;font-size:12px}}\n&lt;/style&gt;\n&lt;div class=\"card\"&gt;Resize to see change! Uses CSS Variables too.&lt;/div&gt;</textarea><div class='pf2'><iframe id='pv-css-5'></iframe></div></div>"}
 ],qb:"css"},
 js:{color:"#fbbf24",badge:"JavaScript",sections:[
-{title:"JS Basics",badge:"LESSON 01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>JavaScript makes websites <strong>interactive</strong>.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(0)'>Run</button></div><textarea class='ce' id='ed-js-0'>let name = \"Shoav\";\nlet skills = [\"HTML\", \"CSS\", \"JS\", \"Python\"];\nconsole.log(\"Hello, \" + name + \"!\");\nconsole.log(\"Skills:\", skills.length);</textarea><div class='ob' id='oj-0'></div></div>"},
-{title:"Functions",badge:"LESSON 02",content:"<div class='ic'><div class='lb'>FUNCTIONS</div><p>Functions are <strong>reusable blocks of code</strong>.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(1)'>Run</button></div><textarea class='ce' id='ed-js-1'>const greet = (name) => \"Hello, \" + name + \"!\";\nconst add = (a, b) => a + b;\nconsole.log(greet(\"Shoav\"));\nconsole.log(\"2 + 3 =\", add(2, 3));</textarea><div class='ob' id='oj-1'></div></div>"},
-{title:"Arrays & Objects",badge:"LESSON 03",content:"<div class='ic'><div class='lb'>DATA</div><p><strong>Arrays</strong> store lists. <strong>Objects</strong> store key-value data.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(2)'>Run</button></div><textarea class='ce' id='ed-js-2'>let fruits = [\"apple\", \"mango\", \"banana\"];\nfruits.push(\"orange\");\nconsole.log(fruits);\nlet user = { name: \"Shoav\", age: 16 };\nconsole.log(user.name, \"is\", user.age);</textarea><div class='ob' id='oj-2'></div></div>"}
+{title:"JS Basics",badge:"L01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>JavaScript makes websites <strong>interactive</strong>.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(0)'>Run</button></div><textarea class='ce' id='ed-js-0'>let name = \"Shoav\";\nlet skills = [\"HTML\", \"CSS\", \"JS\"];\nconsole.log(\"Hello, \" + name + \"!\");\nconsole.log(\"Skills:\", skills.length);\nconsole.log(typeof name);</textarea><div class='ob' id='oj-0'></div></div>"},
+{title:"Functions",badge:"L02",content:"<div class='ic'><div class='lb'>FUNCTIONS</div><p>Reusable code blocks. Arrow functions are modern JS.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(1)'>Run</button></div><textarea class='ce' id='ed-js-1'>const greet = name => \"Hello, \" + name + \"!\";\nconst add = (a, b) => a + b;\nconsole.log(greet(\"Shoav\"));\nconsole.log(\"5+3=\", add(5,3));\nconsole.log(\"Square:\", x => x*x)(4);</textarea><div class='ob' id='oj-1'></div></div>"},
+{title:"Arrays & Objects",badge:"L03",content:"<div class='ic'><div class='lb'>DATA</div><p><strong>Arrays</strong>=lists. <strong>Objects</strong>=key-value.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(2)'>Run</button></div><textarea class='ce' id='ed-js-2'>let fruits = [\"apple\", \"mango\"];\nfruits.push(\"orange\");\nfruits.forEach(f => console.log(f));\nlet user = {name:\"Shoav\", age:16};\nconsole.log(user.name, \"age:\", user.age);\nconsole.log(Object.keys(user));</textarea><div class='ob' id='oj-2'></div></div>"},
+{title:"DOM",badge:"L04",content:"<div class='ic'><div class='lb'>DOM</div><p>JavaScript can <strong>change HTML</strong> in real-time!</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rHTML(\"js\",3)'>Run</button></div><textarea class='ce' id='ed-js-3'>&lt;button onclick=\"changeIt()\" style=\"padding:10px 20px;background:#6366f1;color:white;border:none;border-radius:8px;cursor:pointer\"&gt;Click Me!&lt;/button&gt;\n&lt;p id=\"msg\" style=\"font-size:20px;margin-top:10px\"&gt;Hello!&lt;/p&gt;\n&lt;script&gt;\nlet count=0;\nfunction changeIt(){count++;document.getElementById(\"msg\").textContent=\"Clicked: \"+count;}\n&lt;/script&gt;</textarea><div class='pf2'><iframe id='pv-js-3'></iframe></div></div>"},
+{title:"Async/Await",badge:"L05",content:"<div class='ic'><div class='lb'>ASYNC</div><p><strong>async/await</strong> makes async code clean and readable.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(4)'>Run</button></div><textarea class='ce' id='ed-js-4'>const wait = ms => new Promise(r => setTimeout(r, ms));\nasync function run(){\n  console.log(\"Start!\");\n  const p = Promise.resolve(42);\n  const val = await p;\n  console.log(\"Promise value:\", val);\n  console.log(\"Done!\");\n}\nrun();</textarea><div class='ob' id='oj-4'></div></div>"},
+{title:"Error Handling",badge:"L06",content:"<div class='ic'><div class='lb'>ERRORS</div><p>Handle errors with <strong>try-catch-finally</strong>.</p></div><div class='ew'><div class='eh'><span class='el'>Try It</span><button class='rb' onclick='rJS(5)'>Run</button></div><textarea class='ce' id='ed-js-5'>function divide(a,b){\n  if(b===0) throw new Error(\"Cannot divide by zero!\");\n  return a/b;\n}\ntry{\n  console.log(divide(10,2));\n  console.log(divide(10,0));\n}catch(e){\n  console.log(\"Caught:\",e.message);\n}finally{\n  console.log(\"Always runs!\");\n}</textarea><div class='ob' id='oj-5'></div></div>"}
 ],qb:"js"},
 python:{color:"#4ade80",badge:"Python",sections:[
-{title:"Python Basics",badge:"LESSON 01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>Python is <strong>clean, powerful, beginner-friendly</strong>. Used for AI, bots, data science.</p></div><div class='cw'><div class='ch'><span>hello.py</span></div><div class='cb'><span class='fn'>print</span>(<span class='str'>\"Hello, World!\"</span>)<br>name=<span class='str'>\"Shoav\"</span><br><span class='fn'>print</span>(<span class='str'>f\"Name: {name}\"</span>)<br><span class='kw'>for</span> i <span class='kw'>in</span> <span class='fn'>range</span>(<span class='num'>3</span>):<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fn'>print</span>(i)</div></div><div class='tip'>No semicolons! Python uses indentation.</div>"},
-{title:"Functions & Lists",badge:"LESSON 02",content:"<div class='ic'><div class='lb'>FUNCTIONS</div><p>Use <strong>def</strong> to define a function.</p></div><div class='cw'><div class='ch'><span>functions.py</span></div><div class='cb'><span class='kw'>def</span> <span class='fn'>greet</span>(name):<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span> <span class='str'>f\"Hello, {name}!\"</span><br><br>skills=[<span class='str'>\"Python\"</span>,<span class='str'>\"HTML\"</span>]<br>skills.<span class='fn'>append</span>(<span class='str'>\"CSS\"</span>)<br><span class='fn'>print</span>(<span class='fn'>len</span>(skills))</div></div>"},
-{title:"Dicts & Logic",badge:"LESSON 03",content:"<div class='ic'><div class='lb'>DICT</div><p><strong>Dictionary</strong> = {key: value}.</p></div><div class='cw'><div class='ch'><span>dict.py</span></div><div class='cb'>user={<span class='str'>\"name\"</span>:<span class='str'>\"Shoav\"</span>,<span class='str'>\"age\"</span>:<span class='num'>16</span>}<br><span class='fn'>print</span>(user[<span class='str'>\"name\"</span>])<br><span class='kw'>if</span> user[<span class='str'>\"age\"</span>]&gt;=<span class='num'>18</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fn'>print</span>(<span class='str'>\"Adult\"</span>)<br><span class='kw'>else</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fn'>print</span>(<span class='str'>\"Minor\"</span>)</div></div>"}
+{title:"Python Basics",badge:"L01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>Python is <strong>clean, powerful, beginner-friendly</strong>. Used for AI, bots, data science.</p></div><div class='cw'><div class='ch'><span>hello.py</span></div><div class='cb'><span class='fn'>print</span>(<span class='str'>\"Hello!\"</span>)<br>name=<span class='str'>\"Shoav\"</span>;age=<span class='num'>16</span><br><span class='fn'>print</span>(<span class='str'>f\"Name:{name}, Age:{age}\"</span>)<br><span class='kw'>for</span> i <span class='kw'>in</span> <span class='fn'>range</span>(<span class='num'>3</span>):<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fn'>print</span>(i)</div></div><div class='tip'>No semicolons! Python uses indentation for code blocks.</div>"},
+{title:"Functions & Lists",badge:"L02",content:"<div class='ic'><div class='lb'>FUNCTIONS</div><p>Use <strong>def</strong> to define. Lists are like arrays.</p></div><div class='cw'><div class='ch'><span>functions.py</span></div><div class='cb'><span class='kw'>def</span> <span class='fn'>greet</span>(name):<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span> <span class='str'>f\"Hello, {name}!\"</span><br>skills=[<span class='str'>\"Python\"</span>,<span class='str'>\"HTML\"</span>]<br>skills.<span class='fn'>append</span>(<span class='str'>\"JS\"</span>)<br><span class='fn'>print</span>(<span class='fn'>greet</span>(<span class='str'>\"Shoav\"</span>))<br><span class='fn'>print</span>(skills[-<span class='num'>1</span>])</div></div>"},
+{title:"OOP",badge:"L03",content:"<div class='ic'><div class='lb'>OOP</div><p>Classes and objects in Python.</p></div><div class='cw'><div class='ch'><span>oop.py</span></div><div class='cb'><span class='kw'>class</span> <span class='fn'>Student</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>def</span> <span class='fn'>__init__</span>(self,name,age):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name=name;self.age=age<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>def</span> <span class='fn'>greet</span>(self):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span> <span class='str'>f\"Hi, I'm {self.name}\"</span><br>s=<span class='fn'>Student</span>(<span class='str'>\"Shoav\"</span>,<span class='num'>16</span>)<br><span class='fn'>print</span>(s.<span class='fn'>greet</span>())</div></div>"},
+{title:"File Handling",badge:"L04",content:"<div class='ic'><div class='lb'>FILES</div><p>Read and write files — essential for real projects.</p></div><div class='cw'><div class='ch'><span>files.py</span></div><div class='cb'><span class='kw'>with</span> <span class='fn'>open</span>(<span class='str'>\"data.txt\"</span>,<span class='str'>\"w\"</span>) <span class='kw'>as</span> f:<br>&nbsp;&nbsp;&nbsp;&nbsp;f.<span class='fn'>write</span>(<span class='str'>\"Hello Shoav!\"</span>)<br><span class='kw'>with</span> <span class='fn'>open</span>(<span class='str'>\"data.txt\"</span>,<span class='str'>\"r\"</span>) <span class='kw'>as</span> f:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fn'>print</span>(f.<span class='fn'>read</span>())</div></div><div class='tip'>Always use 'with' for files — auto closes them!</div>"},
+{title:"Error Handling",badge:"L05",content:"<div class='ic'><div class='lb'>ERRORS</div><p><strong>try-except</strong> handles errors gracefully.</p></div><div class='cw'><div class='ch'><span>errors.py</span></div><div class='cb'><span class='kw'>try</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;result=<span class='num'>10</span>/<span class='num'>0</span><br><span class='kw'>except</span> <span class='fn'>ZeroDivisionError</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fn'>print</span>(<span class='str'>\"Can't divide by 0!\"</span>)<br><span class='kw'>except</span> <span class='fn'>Exception</span> <span class='kw'>as</span> e:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fn'>print</span>(<span class='str'>f\"Error: {e}\"</span>)<br><span class='kw'>finally</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fn'>print</span>(<span class='str'>\"Done!\"</span>)</div></div>"},
+{title:"List Comprehension",badge:"L06",content:"<div class='ic'><div class='lb'>ADVANCED</div><p><strong>List comprehension</strong> — Python's most powerful one-liner!</p></div><div class='cw'><div class='ch'><span>advanced.py</span></div><div class='cb'>squares=[i**<span class='num'>2</span> <span class='kw'>for</span> i <span class='kw'>in</span> <span class='fn'>range</span>(<span class='num'>5</span>)]<br>evens=[x <span class='kw'>for</span> x <span class='kw'>in</span> <span class='fn'>range</span>(<span class='num'>20</span>) <span class='kw'>if</span> x%<span class='num'>2</span>==<span class='num'>0</span>]<br>names=[<span class='str'>\"shoav\"</span>,<span class='str'>\"ali\"</span>]<br>upper=[n.<span class='fn'>upper</span>() <span class='kw'>for</span> n <span class='kw'>in</span> names]<br><span class='fn'>print</span>(squares,evens,upper)</div></div>"}
 ],qb:"python"},
 cpp:{color:"#f472b6",badge:"C++",sections:[
-{title:"C++ Basics",badge:"LESSON 01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>C++ is <strong>blazing fast</strong>. Games, browsers built with C++. Every line needs <strong>;</strong></p></div><div class='cw'><div class='ch'><span>hello.cpp</span></div><div class='cb'><span class='tg'>#include</span> <span class='vl'>&lt;iostream&gt;</span><br><span class='kw'>using namespace</span> std;<br><span class='kw'>int</span> <span class='fn'>main</span>(){<br>&nbsp;&nbsp;cout&lt;&lt;<span class='str'>\"Hello!\"</span>&lt;&lt;endl;<br>&nbsp;&nbsp;<span class='kw'>return</span> <span class='num'>0</span>;<br>}</div></div>"},
-{title:"Loops & Functions",badge:"LESSON 02",content:"<div class='ic'><div class='lb'>LOOPS</div><p>C++ has for, while, do-while loops. Functions must declare return type.</p></div><div class='cw'><div class='ch'><span>loops.cpp</span></div><div class='cb'><span class='kw'>for</span>(<span class='kw'>int</span> i=<span class='num'>0</span>;i&lt;<span class='num'>5</span>;i++){<br>&nbsp;&nbsp;cout&lt;&lt;i&lt;&lt;endl;<br>}<br><span class='kw'>int</span> <span class='fn'>add</span>(<span class='kw'>int</span> a,<span class='kw'>int</span> b){<span class='kw'>return</span> a+b;}</div></div>"},
-{title:"Classes",badge:"LESSON 03",content:"<div class='ic'><div class='lb'>OOP</div><p>Classes enable object-oriented programming in C++.</p></div><div class='cw'><div class='ch'><span>class.cpp</span></div><div class='cb'><span class='kw'>class</span> <span class='fn'>Student</span>{<br><span class='kw'>public</span>:<br>&nbsp;&nbsp;string name;<br>&nbsp;&nbsp;<span class='kw'>void</span> <span class='fn'>greet</span>(){cout&lt;&lt;name;}<br>};<br>Student s;s.name=<span class='str'>\"Shoav\"</span>;<br>s.<span class='fn'>greet</span>();</div></div>"}
+{title:"C++ Basics",badge:"L01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>C++ is <strong>blazing fast</strong>. Games and browsers built with C++!</p></div><div class='cw'><div class='ch'><span>hello.cpp</span></div><div class='cb'><span class='tg'>#include</span><span class='vl'>&lt;iostream&gt;</span><br><span class='kw'>using namespace</span> std;<br><span class='kw'>int</span> <span class='fn'>main</span>(){cout&lt;&lt;<span class='str'>\"Hello!\"</span>&lt;&lt;endl;<span class='kw'>return</span> <span class='num'>0</span>;}</div></div><div class='warn'>Every statement needs a semicolon in C++!</div>"},
+{title:"Variables & Types",badge:"L02",content:"<div class='ic'><div class='lb'>TYPES</div><p>C++ is strictly typed — declare types explicitly.</p></div><div class='cw'><div class='ch'><span>types.cpp</span></div><div class='cb'><span class='kw'>int</span> age=<span class='num'>16</span>;<br>string name=<span class='str'>\"Shoav\"</span>;<br><span class='kw'>float</span> gpa=<span class='num'>3.9</span>;<br><span class='kw'>bool</span> coder=<span class='kw'>true</span>;<br><span class='kw'>for</span>(<span class='kw'>int</span> i=<span class='num'>0</span>;i&lt;<span class='num'>5</span>;i++) cout&lt;&lt;i&lt;&lt;<span class='str'>\", \"</span>;</div></div>"},
+{title:"Functions & Arrays",badge:"L03",content:"<div class='ic'><div class='lb'>FUNCTIONS</div><p>Functions must declare return type. Arrays have fixed size.</p></div><div class='cw'><div class='ch'><span>func.cpp</span></div><div class='cb'><span class='kw'>int</span> <span class='fn'>add</span>(<span class='kw'>int</span> a,<span class='kw'>int</span> b){<span class='kw'>return</span> a+b;}<br><span class='kw'>int</span> arr[<span class='num'>5</span>]={<span class='num'>1</span>,<span class='num'>2</span>,<span class='num'>3</span>,<span class='num'>4</span>,<span class='num'>5</span>};<br>cout&lt;&lt;<span class='fn'>add</span>(<span class='num'>3</span>,<span class='num'>4</span>);</div></div>"},
+{title:"Classes & OOP",badge:"L04",content:"<div class='ic'><div class='lb'>OOP</div><p>Classes are blueprints for objects.</p></div><div class='cw'><div class='ch'><span>class.cpp</span></div><div class='cb'><span class='kw'>class</span> <span class='fn'>Student</span>{<br><span class='kw'>public</span>: string name;<span class='kw'>int</span> age;<br><span class='fn'>Student</span>(string n,<span class='kw'>int</span> a):name(n),age(a){}<br><span class='kw'>void</span> <span class='fn'>greet</span>(){cout&lt;&lt;<span class='str'>\"Hi \"</span>&lt;&lt;name;}<br>};<br>Student s(<span class='str'>\"Shoav\"</span>,<span class='num'>16</span>);<br>s.<span class='fn'>greet</span>();</div></div>"},
+{title:"Pointers",badge:"L05",content:"<div class='ic'><div class='lb'>POINTERS</div><p>Pointers store <strong>memory addresses</strong>.</p></div><div class='cw'><div class='ch'><span>ptr.cpp</span></div><div class='cb'><span class='kw'>int</span> x=<span class='num'>10</span>;<br><span class='kw'>int</span>* ptr=&amp;x;<br>cout&lt;&lt;x; <span class='cm'>// 10</span><br>cout&lt;&lt;*ptr; <span class='cm'>// 10</span><br>*ptr=<span class='num'>20</span>;<br>cout&lt;&lt;x; <span class='cm'>// 20</span></div></div><div class='warn'>Always initialize pointers before using!</div>"},
+{title:"STL",badge:"L06",content:"<div class='ic'><div class='lb'>STL</div><p>Standard Template Library — ready-made data structures.</p></div><div class='cw'><div class='ch'><span>stl.cpp</span></div><div class='cb'><span class='tg'>#include</span><span class='vl'>&lt;vector&gt;</span><br><span class='tg'>#include</span><span class='vl'>&lt;map&gt;</span><br>vector&lt;<span class='kw'>int</span>&gt; v={<span class='num'>1</span>,<span class='num'>2</span>,<span class='num'>3</span>};<br>v.<span class='fn'>push_back</span>(<span class='num'>4</span>);<br>map&lt;string,<span class='kw'>int</span>&gt; sc;<br>sc[<span class='str'>\"Shoav\"</span>]=<span class='num'>95</span>;<br>cout&lt;&lt;sc[<span class='str'>\"Shoav\"</span>];</div></div>"}
 ],qb:"cpp"},
 java:{color:"#f97316",badge:"Java",sections:[
-{title:"Java Basics",badge:"LESSON 01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>Java = <strong>Write Once, Run Anywhere</strong>. Android apps use Java.</p></div><div class='cw'><div class='ch'><span>Hello.java</span></div><div class='cb'><span class='kw'>public class</span> <span class='fn'>Hello</span>{<br>&nbsp;&nbsp;<span class='kw'>public static void</span> <span class='fn'>main</span>(String[] args){<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span class='fn'>println</span>(<span class='str'>\"Hello World!\"</span>);<br>&nbsp;&nbsp;}<br>}</div></div>"},
-{title:"OOP",badge:"LESSON 02",content:"<div class='ic'><div class='lb'>OOP</div><p>Java is a <strong>pure OOP language</strong>.</p></div><div class='cw'><div class='ch'><span>Student.java</span></div><div class='cb'><span class='kw'>class</span> <span class='fn'>Student</span>{<br>&nbsp;&nbsp;String name;<br>&nbsp;&nbsp;<span class='fn'>Student</span>(String n){name=n;}<br>&nbsp;&nbsp;<span class='kw'>void</span> <span class='fn'>greet</span>(){System.out.<span class='fn'>println</span>(<span class='str'>\"Hi \"+</span>name);}<br>}</div></div>"},
-{title:"Exceptions",badge:"LESSON 03",content:"<div class='ic'><div class='lb'>ERRORS</div><p>Handle errors with <strong>try-catch</strong>.</p></div><div class='cw'><div class='ch'><span>error.java</span></div><div class='cb'><span class='kw'>try</span>{<br>&nbsp;&nbsp;<span class='kw'>int</span> r=<span class='num'>10</span>/<span class='num'>0</span>;<br>}<span class='kw'>catch</span>(Exception e){<br>&nbsp;&nbsp;System.out.<span class='fn'>println</span>(<span class='str'>\"Error: \"</span>+e.<span class='fn'>getMessage</span>());<br>}</div></div>"}
+{title:"Java Basics",badge:"L01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>Java = <strong>Write Once Run Anywhere</strong>. Android runs on Java!</p></div><div class='cw'><div class='ch'><span>Hello.java</span></div><div class='cb'><span class='kw'>public class</span> <span class='fn'>Hello</span>{<br><span class='kw'>public static void</span> <span class='fn'>main</span>(String[] args){<br>System.out.<span class='fn'>println</span>(<span class='str'>\"Hello World!\"</span>);<br>}}</div></div><div class='warn'>File name must match class name!</div>"},
+{title:"Variables",badge:"L02",content:"<div class='ic'><div class='lb'>TYPES</div><p>Java is strictly typed. Declare type for every variable.</p></div><div class='cw'><div class='ch'><span>Types.java</span></div><div class='cb'><span class='kw'>int</span> age=<span class='num'>16</span>;<br>String name=<span class='str'>\"Shoav\"</span>;<br><span class='kw'>boolean</span> coder=<span class='kw'>true</span>;<br>String s=age&gt;=<span class='num'>18</span>?<span class='str'>\"adult\"</span>:<span class='str'>\"minor\"</span>;<br>System.out.<span class='fn'>println</span>(s);</div></div>"},
+{title:"OOP",badge:"L03",content:"<div class='ic'><div class='lb'>OOP</div><p>Everything in Java is inside a class.</p></div><div class='cw'><div class='ch'><span>Student.java</span></div><div class='cb'><span class='kw'>class</span> <span class='fn'>Student</span>{<br><span class='kw'>private</span> String name;<br><span class='fn'>Student</span>(String n){name=n;}<br><span class='kw'>void</span> <span class='fn'>greet</span>(){System.out.<span class='fn'>println</span>(<span class='str'>\"Hi \"+</span>name);}<br>}<br>Student s=<span class='kw'>new</span> <span class='fn'>Student</span>(<span class='str'>\"Shoav\"</span>);<br>s.<span class='fn'>greet</span>();</div></div>"},
+{title:"Inheritance",badge:"L04",content:"<div class='ic'><div class='lb'>INHERITANCE</div><p><strong>extends</strong> = inherit from another class.</p></div><div class='cw'><div class='ch'><span>inherit.java</span></div><div class='cb'><span class='kw'>class</span> <span class='fn'>Animal</span>{<br><span class='kw'>void</span> <span class='fn'>speak</span>(){System.out.<span class='fn'>println</span>(<span class='str'>\"...\"</span>);}<br>}<br><span class='kw'>class</span> <span class='fn'>Dog</span> <span class='kw'>extends</span> <span class='fn'>Animal</span>{<br>@Override<br><span class='kw'>void</span> <span class='fn'>speak</span>(){System.out.<span class='fn'>println</span>(<span class='str'>\"Woof!\"</span>);}<br>}</div></div>"},
+{title:"Collections",badge:"L05",content:"<div class='ic'><div class='lb'>COLLECTIONS</div><p>ArrayList, HashMap — dynamic data structures.</p></div><div class='cw'><div class='ch'><span>coll.java</span></div><div class='cb'><span class='tg'>import</span> java.util.*;<br>ArrayList&lt;String&gt; list=<span class='kw'>new</span> ArrayList&lt;&gt;();<br>list.<span class='fn'>add</span>(<span class='str'>\"HTML\"</span>);<br>HashMap&lt;String,Integer&gt; sc=<span class='kw'>new</span> HashMap&lt;&gt;();<br>sc.<span class='fn'>put</span>(<span class='str'>\"Shoav\"</span>,<span class='num'>95</span>);<br>System.out.<span class='fn'>println</span>(sc.<span class='fn'>get</span>(<span class='str'>\"Shoav\"</span>));</div></div>"},
+{title:"Exceptions",badge:"L06",content:"<div class='ic'><div class='lb'>EXCEPTIONS</div><p>Handle errors with try-catch-finally.</p></div><div class='cw'><div class='ch'><span>err.java</span></div><div class='cb'><span class='kw'>try</span>{<br>&nbsp;&nbsp;<span class='kw'>int</span> r=<span class='num'>10</span>/<span class='num'>0</span>;<br>}<span class='kw'>catch</span>(ArithmeticException e){<br>&nbsp;&nbsp;System.out.<span class='fn'>println</span>(<span class='str'>\"Error: \"</span>+e.<span class='fn'>getMessage</span>());<br>}<span class='kw'>finally</span>{System.out.<span class='fn'>println</span>(<span class='str'>\"Done!\"</span>);}</div></div>"}
 ],qb:"java"},
 sql:{color:"#22d3ee",badge:"SQL",sections:[
-{title:"SQL Basics",badge:"LESSON 01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>SQL lets you read, write, update and delete database data.</p></div><div class='cw'><div class='ch'><span>queries.sql</span></div><div class='cb'><span class='kw'>SELECT</span> * <span class='kw'>FROM</span> users;<br><span class='kw'>SELECT</span> name <span class='kw'>FROM</span> users <span class='kw'>WHERE</span> city=<span class='str'>'Mumbai'</span>;<br><span class='kw'>INSERT INTO</span> users (name) <span class='kw'>VALUES</span> (<span class='str'>'Shoav'</span>);</div></div>"},
-{title:"Joins",badge:"LESSON 02",content:"<div class='ic'><div class='lb'>JOINS</div><p>Combine tables with <strong>JOIN</strong>.</p></div><div class='cw'><div class='ch'><span>joins.sql</span></div><div class='cb'><span class='kw'>SELECT</span> users.name, orders.product<br><span class='kw'>FROM</span> users<br><span class='kw'>INNER JOIN</span> orders <span class='kw'>ON</span> users.id=orders.user_id;</div></div>"},
-{title:"Keys",badge:"LESSON 03",content:"<div class='ic'><div class='lb'>KEYS</div><p><strong>PRIMARY KEY</strong> = unique row ID.</p></div><div class='cw'><div class='ch'><span>create.sql</span></div><div class='cb'><span class='kw'>CREATE TABLE</span> users(<br>&nbsp;&nbsp;id <span class='kw'>INT PRIMARY KEY AUTO_INCREMENT</span>,<br>&nbsp;&nbsp;name <span class='kw'>VARCHAR</span>(<span class='num'>100</span>) <span class='kw'>NOT NULL</span><br>);</div></div>"}
+{title:"SQL Basics",badge:"L01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>SQL = database language. Read write update delete data.</p></div><div class='cw'><div class='ch'><span>basics.sql</span></div><div class='cb'><span class='kw'>SELECT</span> * <span class='kw'>FROM</span> users;<br><span class='kw'>INSERT INTO</span> users (name) <span class='kw'>VALUES</span> (<span class='str'>'Shoav'</span>);<br><span class='kw'>UPDATE</span> users <span class='kw'>SET</span> age=<span class='num'>17</span> <span class='kw'>WHERE</span> name=<span class='str'>'Shoav'</span>;<br><span class='kw'>DELETE FROM</span> users <span class='kw'>WHERE</span> id=<span class='num'>5</span>;</div></div>"},
+{title:"Filtering",badge:"L02",content:"<div class='ic'><div class='lb'>FILTER</div><p>WHERE filters. ORDER BY sorts. LIMIT restricts count.</p></div><div class='cw'><div class='ch'><span>filter.sql</span></div><div class='cb'><span class='kw'>SELECT</span> * <span class='kw'>FROM</span> users<br><span class='kw'>WHERE</span> age&gt;<span class='num'>18</span> <span class='kw'>AND</span> city=<span class='str'>'Delhi'</span><br><span class='kw'>ORDER BY</span> name <span class='kw'>ASC</span><br><span class='kw'>LIMIT</span> <span class='num'>10</span>;</div></div>"},
+{title:"Joins",badge:"L03",content:"<div class='ic'><div class='lb'>JOINS</div><p>Combine tables with JOIN.</p></div><div class='cw'><div class='ch'><span>joins.sql</span></div><div class='cb'><span class='kw'>SELECT</span> u.name,o.product<br><span class='kw'>FROM</span> users u<br><span class='kw'>INNER JOIN</span> orders o <span class='kw'>ON</span> u.id=o.user_id;<br><br><span class='kw'>LEFT JOIN</span> <span class='cm'>-- includes users with no orders</span></div></div>"},
+{title:"Aggregates",badge:"L04",content:"<div class='ic'><div class='lb'>AGGREGATE</div><p>COUNT SUM AVG MAX MIN — aggregate functions.</p></div><div class='cw'><div class='ch'><span>agg.sql</span></div><div class='cb'><span class='kw'>SELECT</span> <span class='fn'>COUNT</span>(*) <span class='kw'>FROM</span> users;<br><span class='kw'>SELECT</span> city,<span class='fn'>COUNT</span>(*) <span class='kw'>as</span> total<br><span class='kw'>FROM</span> users <span class='kw'>GROUP BY</span> city<br><span class='kw'>HAVING</span> <span class='fn'>COUNT</span>(*)&gt;<span class='num'>5</span>;</div></div>"},
+{title:"Create Tables",badge:"L05",content:"<div class='ic'><div class='lb'>DDL</div><p>Create tables with proper types and constraints.</p></div><div class='cw'><div class='ch'><span>create.sql</span></div><div class='cb'><span class='kw'>CREATE TABLE</span> users(<br>id <span class='kw'>INT PRIMARY KEY AUTO_INCREMENT</span>,<br>name <span class='kw'>VARCHAR</span>(<span class='num'>100</span>) <span class='kw'>NOT NULL</span>,<br>email <span class='kw'>VARCHAR</span>(<span class='num'>200</span>) <span class='kw'>UNIQUE</span><br>);</div></div>"},
+{title:"Indexes & Views",badge:"L06",content:"<div class='ic'><div class='lb'>ADVANCED</div><p><strong>Indexes</strong> speed up queries. <strong>Views</strong> are saved queries.</p></div><div class='cw'><div class='ch'><span>adv.sql</span></div><div class='cb'><span class='kw'>CREATE INDEX</span> idx_email <span class='kw'>ON</span> users(email);<br><br><span class='kw'>CREATE VIEW</span> active <span class='kw'>AS</span><br><span class='kw'>SELECT</span> * <span class='kw'>FROM</span> users<br><span class='kw'>WHERE</span> active=<span class='num'>1</span>;</div></div>"}
 ],qb:"sql"},
 bash:{color:"#a78bfa",badge:"Bash",sections:[
-{title:"Bash Basics",badge:"LESSON 01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>Bash is the <strong>language of the terminal</strong>.</p></div><div class='cw'><div class='ch'><span>terminal</span></div><div class='cb'>pwd &nbsp;<span class='cm'># current folder</span><br>ls &nbsp;&nbsp;<span class='cm'># list files</span><br>cd myproject<br>mkdir newfolder<br>touch hello.py</div></div><div class='tip'>Try all these in Termux on Android!</div>"},
-{title:"Scripts",badge:"LESSON 02",content:"<div class='ic'><div class='lb'>SCRIPTING</div><p>Write Bash scripts for <strong>automated tasks</strong>.</p></div><div class='cw'><div class='ch'><span>script.sh</span></div><div class='cb'><span class='cm'>#!/bin/bash</span><br>name=<span class='str'>\"Shoav\"</span><br>echo <span class='str'>\"Name: $name\"</span><br><span class='kw'>for</span> i <span class='kw'>in</span> {1..5};<span class='kw'>do</span><br>&nbsp;&nbsp;echo $i<br><span class='kw'>done</span></div></div>"},
-{title:"Pipes & Grep",badge:"LESSON 03",content:"<div class='ic'><div class='lb'>POWER</div><p>Pipe (|) sends output of one command into another.</p></div><div class='cw'><div class='ch'><span>power.sh</span></div><div class='cb'>ls -la | grep .py<br>grep <span class='str'>\"error\"</span> log.txt<br>chmod +x deploy.sh<br>./deploy.sh</div></div>"}
+{title:"Bash Basics",badge:"L01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>Bash = language of the terminal. Automate everything!</p></div><div class='cw'><div class='ch'><span>terminal</span></div><div class='cb'>pwd; ls -la; cd project<br>mkdir newfolder; touch hello.py<br>cat hello.py; rm file.txt</div></div><div class='tip'>Try all in Termux on Android!</div>"},
+{title:"Variables",badge:"L02",content:"<div class='ic'><div class='lb'>VARIABLES</div><p>No spaces around = when assigning!</p></div><div class='cw'><div class='ch'><span>vars.sh</span></div><div class='cb'><span class='cm'>#!/bin/bash</span><br>name=<span class='str'>\"Shoav\"</span><br>echo <span class='str'>\"Hello $name!\"</span><br>read username<br>echo <span class='str'>\"You entered: $username\"</span></div></div>"},
+{title:"Conditionals",badge:"L03",content:"<div class='ic'><div class='lb'>CONTROL</div><p>if-then-fi and loops in Bash.</p></div><div class='cw'><div class='ch'><span>control.sh</span></div><div class='cb'><span class='kw'>if</span> [ $age -ge <span class='num'>18</span> ];<span class='kw'>then</span> echo <span class='str'>\"Adult\"</span>;<span class='kw'>fi</span><br><span class='kw'>for</span> i <span class='kw'>in</span> {1..5};<span class='kw'>do</span> echo $i;<span class='kw'>done</span></div></div>"},
+{title:"Functions",badge:"L04",content:"<div class='ic'><div class='lb'>FUNCTIONS</div><p>Write reusable functions in Bash.</p></div><div class='cw'><div class='ch'><span>func.sh</span></div><div class='cb'><span class='fn'>greet</span>(){echo <span class='str'>\"Hello $1!\"</span>;}<br><span class='fn'>greet</span> <span class='str'>\"Shoav\"</span><br>chmod +x script.sh<br>./script.sh</div></div>"},
+{title:"Pipes & Grep",badge:"L05",content:"<div class='ic'><div class='lb'>POWER</div><p>Pipe | chains commands. grep searches text.</p></div><div class='cw'><div class='ch'><span>pipes.sh</span></div><div class='cb'>ls -la | grep .py<br>cat file.txt | wc -l<br>grep <span class='str'>\"error\"</span> log.txt<br>cat names.txt | sort | uniq -c</div></div>"},
+{title:"Cron Jobs",badge:"L06",content:"<div class='ic'><div class='lb'>CRON</div><p>Cron jobs run scripts automatically on schedule.</p></div><div class='cw'><div class='ch'><span>cron</span></div><div class='cb'>crontab -e<br><br><span class='cm'># min hr day mon weekday cmd</span><br>0 9 * * * /home/user/backup.sh<br>0 * * * * /scripts/check.sh</div></div>"}
 ],qb:"bash"},
 logic:{color:"#6366f1",badge:"Logic",sections:[
-{title:"Patterns",badge:"LESSON 01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>Logic is the <strong>foundation of all programming</strong>. Patterns sharpen problem-solving.</p></div><div class='ic'><div class='lb'>EXAMPLES</div><p><strong>2,4,6,8,?</strong> → +2 → <strong>10</strong><br><strong>1,2,4,8,?</strong> → ×2 → <strong>16</strong><br><strong>1,1,2,3,5,8,?</strong> → Fibonacci → <strong>13</strong></p></div>"},
-{title:"Code Output",badge:"LESSON 02",content:"<div class='ic'><div class='lb'>CODE READING</div><p>Predicting output without running code is a <strong>key interview skill</strong>.</p></div><div class='cw'><div class='ch'><span>output.js</span></div><div class='cb'><span class='kw'>let</span> x=<span class='num'>5</span>;<br><span class='kw'>let</span> y=x++; <span class='cm'>// y=5, then x=6</span><br>console.log(x,y); <span class='cm'>// 6 5</span></div></div><div class='warn'>x++ uses value FIRST, then increments.</div>"},
-{title:"Puzzles",badge:"LESSON 03",content:"<div class='ic'><div class='lb'>PUZZLES</div><p>Brain exercises that <strong>improve problem-solving</strong>.</p></div><div class='ic'><div class='lb'>3 SWITCHES PUZZLE</div><p>3 switches, 3 bulbs, one visit.<br><br>1. Turn Switch 1 on — wait 10 min<br>2. Turn off Switch 1, turn on Switch 2<br>3. Enter: On=2, Warm-off=1, Cold-off=3</p></div>"}
-],qb:"logic"}};
+{title:"Patterns",badge:"L01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>Logic is the <strong>foundation of all programming</strong>.</p></div><div class='ic'><div class='lb'>PATTERNS</div><p><strong>2,4,6,8,?</strong>→+2→<strong>10</strong><br><strong>1,2,4,8,?</strong>→×2→<strong>16</strong><br><strong>1,1,2,3,5,8,?</strong>→Fibonacci→<strong>13</strong></p></div>"},
+{title:"Code Output",badge:"L02",content:"<div class='ic'><div class='lb'>CODE READING</div><p>Predicting output = key interview skill.</p></div><div class='cw'><div class='ch'><span>output.js</span></div><div class='cb'><span class='kw'>let</span> x=<span class='num'>5</span>;<span class='kw'>let</span> y=x++;<br>console.log(x,y); <span class='cm'>// 6 5</span><br><span class='kw'>for</span>(<span class='kw'>let</span> i=<span class='num'>0</span>;i&lt;<span class='num'>5</span>;i+=<span class='num'>2</span>) console.log(i); <span class='cm'>// 0,2,4</span></div></div><div class='warn'>x++ uses value FIRST then increments!</div>"},
+{title:"Big O",badge:"L03",content:"<div class='ic'><div class='lb'>BIG O</div><p>How fast an algorithm is as input grows.</p></div><div class='ic'><div class='lb'>RANKING</div><p>O(1)=constant<br>O(log n)=logarithmic (binary search)<br>O(n)=linear<br>O(n log n)=merge sort<br>O(n²)=nested loops<br><br><strong>Best→Worst:</strong> O(1)→O(log n)→O(n)→O(n²)</p></div>"},
+{title:"Sorting",badge:"L04",content:"<div class='ic'><div class='lb'>SORTING</div><p>Sorting = fundamental algorithm knowledge.</p></div><div class='cw'><div class='ch'><span>sort.js</span></div><div class='cb'><span class='cm'>// Bubble Sort O(n²)</span><br><span class='kw'>function</span> <span class='fn'>bubble</span>(arr){<br><span class='kw'>for</span>(<span class='kw'>let</span> i=<span class='num'>0</span>;i&lt;arr.length;i++)<br><span class='kw'>for</span>(<span class='kw'>let</span> j=<span class='num'>0</span>;j&lt;arr.length-i-<span class='num'>1</span>;j++)<br><span class='kw'>if</span>(arr[j]&gt;arr[j+<span class='num'>1</span>])[arr[j],arr[j+<span class='num'>1</span>]]=[arr[j+<span class='num'>1</span>],arr[j]];<br><span class='kw'>return</span> arr;}</div></div>"},
+{title:"Binary Search",badge:"L05",content:"<div class='ic'><div class='lb'>BINARY SEARCH</div><p>O(log n) — much faster than linear O(n)!</p></div><div class='cw'><div class='ch'><span>search.js</span></div><div class='cb'><span class='kw'>function</span> <span class='fn'>bSearch</span>(arr,target){<br><span class='kw'>let</span> l=<span class='num'>0</span>,r=arr.length-<span class='num'>1</span>;<br><span class='kw'>while</span>(l&lt;=r){<br><span class='kw'>let</span> mid=Math.<span class='fn'>floor</span>((l+r)/<span class='num'>2</span>);<br><span class='kw'>if</span>(arr[mid]===target)<span class='kw'>return</span> mid;<br><span class='kw'>if</span>(arr[mid]&lt;target)l=mid+<span class='num'>1</span>;<span class='kw'>else</span> r=mid-<span class='num'>1</span>;}<br><span class='kw'>return</span> -<span class='num'>1</span>;}</div></div>"},
+{title:"Recursion",badge:"L06",content:"<div class='ic'><div class='lb'>RECURSION</div><p>Function that calls itself. MUST have base case!</p></div><div class='cw'><div class='ch'><span>rec.js</span></div><div class='cb'><span class='kw'>function</span> <span class='fn'>factorial</span>(n){<br><span class='kw'>if</span>(n&lt;=<span class='num'>1</span>)<span class='kw'>return</span> <span class='num'>1</span>;<br><span class='kw'>return</span> n*<span class='fn'>factorial</span>(n-<span class='num'>1</span>);<br>}<br><span class='fn'>factorial</span>(<span class='num'>5</span>); <span class='cm'>// 120</span></div></div><div class='warn'>No base case = infinite loop = stack overflow!</div>"}
+],qb:"logic"},
+english:{color:"#f43f5e",badge:"English",sections:[
+{title:"Parts of Speech",badge:"L01",content:"<div class='ic'><div class='lb'>CONCEPT</div><p>Every word has a role in a sentence.</p></div><div class='ic'><div class='lb'>8 PARTS</div><p><strong>Noun</strong>: person/place/thing — Shoav, Mumbai, code<br><strong>Verb</strong>: action — write, run, debug<br><strong>Adjective</strong>: describes noun — fast, clean, broken<br><strong>Adverb</strong>: describes verb — quickly, easily<br><strong>Pronoun</strong>: replaces noun — he, she, it, they<br><strong>Preposition</strong>: in, on, at, from<br><strong>Conjunction</strong>: and, but, or, because<br><strong>Article</strong>: the, a, an</p></div>"},
+{title:"Tenses",badge:"L02",content:"<div class='ic'><div class='lb'>TENSES</div><p>Tenses tell <strong>when</strong> something happens.</p></div><div class='ic'><div class='lb'>MAIN TENSES</div><p><strong>Past:</strong> I wrote code yesterday.<br><strong>Present:</strong> I write code every day.<br><strong>Future:</strong> I will write code tomorrow.<br><strong>Present Perfect:</strong> I have written the app.<br><strong>Past Continuous:</strong> I was writing code.</p></div><div class='tip'>In technical docs, use Present Simple for facts.</div>"},
+{title:"Sentence Structure",badge:"L03",content:"<div class='ic'><div class='lb'>STRUCTURE</div><p>Good sentence = <strong>Subject + Verb + Object</strong></p></div><div class='ic'><div class='lb'>TYPES</div><p><strong>Simple:</strong> The code runs fast.<br><strong>Compound:</strong> Code runs fast, but uses too much memory.<br><strong>Complex:</strong> Although code is clean, it needs optimization.</p></div><div class='warn'>Avoid long complex sentences in technical writing!</div>"},
+{title:"Technical Writing",badge:"L04",content:"<div class='ic'><div class='lb'>TECH WRITING</div><p>Write documentation and comments like a pro.</p></div><div class='ic'><div class='lb'>TIPS</div><p><strong>1. Be Clear:</strong> Simple words. No jargon.<br><strong>2. Be Brief:</strong> \"Use this function\" not \"You should probably use\"<br><strong>3. Active Voice:</strong> \"Function returns value\" not \"Value is returned\"<br><strong>4. Use Examples:</strong> Always show don't just tell.<br><strong>5. Bullets:</strong> Lists over paragraphs.</p></div>"},
+{title:"Common Mistakes",badge:"L05",content:"<div class='ic'><div class='lb'>FIX THESE</div><p><strong>Its vs It's:</strong><br>Its=belonging. It's=it is.<br><em>The app has its own DB. It's working.</em><br><br><strong>There/Their/They're:</strong><br>There=place. Their=belonging. They're=they are.<br><br><strong>Then vs Than:</strong><br>Then=time. Than=comparison.<br><em>First debug, then deploy. Python is easier than C++.</em><br><br><strong>Effect vs Affect:</strong><br>Effect=noun. Affect=verb.</p></div>"},
+{title:"Email Writing",badge:"L06",content:"<div class='ic'><div class='lb'>PROFESSIONAL</div><p>Write professional emails for work.</p></div><div class='ic'><div class='lb'>TEMPLATE</div><p><strong>Subject:</strong> Bug Report — Login Error<br><br><strong>Hi [Name],</strong><br><br>I found a bug in the login page. When users enter wrong password, the app crashes.<br><br>Steps:<br>1. Go to login<br>2. Enter wrong password<br>3. Click Submit<br><br>Please let me know if you need more details.<br><br>Best, Shoav</p></div><div class='tip'>Always include: what happened, steps to reproduce, expected vs actual!</div>"}
+],qb:"english"}};
 
 var QB={
 html:[
-{q:"What does HTML stand for?",opts:["HyperText Markup Language","High Text Machine Language","Home Tool Markup Language","HyperText Machine Language"],ans:0,diff:"easy"},
-{q:"Where does visible content go?",opts:["In the head","Directly in html","In the body","In meta"],ans:2,diff:"easy"},
+{q:"What does HTML stand for?",opts:["HyperText Markup Language","High Text Machine","Home Tool Markup","HyperText Machine"],ans:0,diff:"easy"},
+{q:"Visible content goes in?",opts:["head","html","body","meta"],ans:2,diff:"easy"},
 {q:"Largest heading tag?",opts:["h6","heading","h1","big"],ans:2,diff:"easy"},
 {q:"Tag for images?",opts:["image","img","pic","photo"],ans:1,diff:"easy"},
 {q:"Tag for links?",opts:["link","url","href","a"],ans:3,diff:"easy"},
-{q:"What does br tag do?",opts:["Bold","Line break","Border","Button"],ans:1,diff:"medium"},
-{q:"Tag for text input?",opts:["input","form","field","text"],ans:0,diff:"medium"},
+{q:"HTML comment syntax?",opts:["// comment","/* */","<!-- comment -->","# comment"],ans:2,diff:"medium"},
+{q:"ul vs ol?",opts:["Same","ul=unordered ol=ordered","ul=ordered ol=unordered","No diff"],ans:1,diff:"medium"},
 {q:"Table row tag?",opts:["td","th","tr","table"],ans:2,diff:"medium"},
-{q:"HTML comment syntax?",opts:["// comment","/* comment */","<!-- comment -->","# comment"],ans:2,diff:"medium"},
-{q:"ul vs ol difference?",opts:["No difference","ul=unordered, ol=ordered","ul=ordered, ol=unordered","Both same"],ans:1,diff:"hard"}
+{q:"Semantic tag for navigation?",opts:["div","section","nav","menu"],ans:2,diff:"hard"},
+{q:"viewport meta tag is for?",opts:["SEO","Mobile responsive","Speed","Security"],ans:1,diff:"hard"}
 ],
 css:[
-{q:"Change text color?",opts:["text-color: red","font-color: red","color: red","text: red"],ans:2,diff:"easy"},
-{q:"Set background color?",opts:["bg: blue","background-color: blue","background: blue","b and c both work"],ans:3,diff:"easy"},
-{q:"Set font size?",opts:["text-size: 16px","font-size: 16px","size: 16px","font: 16px"],ans:1,diff:"easy"},
+{q:"Change text color?",opts:["text-color:red","font-color:red","color:red","text:red"],ans:2,diff:"easy"},
 {q:"Space outside element?",opts:["spacing","margin","padding","border"],ans:1,diff:"easy"},
 {q:"Space inside element?",opts:["margin","border","padding","gap"],ans:2,diff:"easy"},
-{q:"What does border-radius do?",opts:["Changes width","Rounds corners","Changes color","Removes element"],ans:1,diff:"medium"},
-{q:"What does display:flex do?",opts:["Hides element","Enables flexbox","Makes bold","Adds border"],ans:1,diff:"medium"},
+{q:"border-radius does?",opts:["Changes width","Rounds corners","Changes color","Removes"],ans:1,diff:"medium"},
+{q:"display:flex does?",opts:["Hides","Enables flexbox","Bold","Border"],ans:1,diff:"medium"},
 {q:"CSS class selector?",opts:["#myClass","myClass","*myClass",".myClass"],ans:3,diff:"medium"},
-{q:"CSS ID selector?",opts:[".myId","#myId","@myId","*myId"],ans:1,diff:"medium"},
-{q:"What is @media query for?",opts:["Animation","Responsive design","Font import","Color"],ans:1,diff:"hard"}
+{q:"@media query for?",opts:["Animation","Responsive design","Font import","Color"],ans:1,diff:"hard"},
+{q:"Grid vs Flexbox?",opts:["Same","Grid=2D Flex=1D","Flex=2D Grid=1D","No diff"],ans:1,diff:"hard"},
+{q:"CSS variable syntax?",opts:["$var","@var","--var","#var"],ans:2,diff:"hard"},
+{q:"transition property for?",opts:["Layout","Smooth animation changes","Color only","Size only"],ans:1,diff:"hard"}
 ],
 js:[
 {q:"Declare a variable?",opts:["var/let/const","variable","int","string"],ans:0,diff:"easy"},
-{q:"Show a popup?",opts:["popup()","show()","alert()","message()"],ans:2,diff:"easy"},
+{q:"Show popup?",opts:["popup()","show()","alert()","message()"],ans:2,diff:"easy"},
 {q:"Print to console?",opts:["print()","echo()","console.log()","log()"],ans:2,diff:"easy"},
-{q:"What is an array?",opts:["Single value","Multiple values in one","A function","An object"],ans:1,diff:"easy"},
-{q:"Find HTML element?",opts:["findElement()","querySelector()","getHTML()","searchTag()"],ans:1,diff:"easy"},
-{q:"let vs const?",opts:["None","let can change, const cannot","const can change","Both same"],ans:1,diff:"medium"},
-{q:"Arrow function syntax?",opts:["function() =>","=> function()","const fn = () => {}","fn => function"],ans:2,diff:"medium"},
-{q:"Add to array end?",opts:[".add()","push()","append()","insert()"],ans:1,diff:"medium"},
-{q:"=== vs ==?",opts:["None","=== checks type too","== is safer","=== is slower"],ans:1,diff:"medium"},
-{q:"What does setTimeout do?",opts:["Loops","Runs code after delay","Hides element","Catches errors"],ans:1,diff:"hard"}
+{q:"Add to array end?",opts:[".add()","push()","append()","insert()"],ans:1,diff:"easy"},
+{q:"let vs const?",opts:["Same","let can change const cannot","const can change","Both same"],ans:1,diff:"medium"},
+{q:"=== vs ==?",opts:["Same","=== checks type too","== safer","=== slower"],ans:1,diff:"medium"},
+{q:"What is DOM?",opts:["Database","Document Object Model","Design Object","Data Map"],ans:1,diff:"medium"},
+{q:"setTimeout does?",opts:["Loops","Runs after delay","Hides","Catches errors"],ans:1,diff:"hard"},
+{q:"Promise represents?",opts:["Variable","Future value","Array","Loop"],ans:1,diff:"hard"},
+{q:"async/await is for?",opts:["Loops","Sync code","Async code","CSS"],ans:2,diff:"hard"}
 ],
 python:[
 {q:"Print in Python?",opts:["echo()","printf()","print()","console.log()"],ans:2,diff:"easy"},
-{q:"Python comment?",opts:["// comment","/* */","# comment","<!-- -->"],ans:2,diff:"easy"},
-{q:"Declare a variable?",opts:["var x=5","int x=5","x=5","let x=5"],ans:2,diff:"easy"},
+{q:"Python comment?",opts:["//","/* */","#","<!--"],ans:2,diff:"easy"},
+{q:"Declare variable?",opts:["var x=5","int x=5","x=5","let x=5"],ans:2,diff:"easy"},
 {q:"Python list syntax?",opts:["{}","()","[]","<>"],ans:2,diff:"easy"},
-{q:"Python for loop?",opts:["for i in range(5):","for(i=0;i<5;i++)","foreach i in 5:","loop 5:"],ans:0,diff:"easy"},
-{q:"What is a dictionary?",opts:["List type","Key-value pairs","Function","Class"],ans:1,diff:"medium"},
-{q:"What does len() return?",opts:["Prints","Length","Starts loop","Deletes"],ans:1,diff:"medium"},
+{q:"Dictionary in Python?",opts:["List type","Key-value pairs","Function","Class"],ans:1,diff:"medium"},
 {q:"def keyword?",opts:["Variable","Loop","Define function","Import"],ans:2,diff:"medium"},
-{q:"Why indentation required?",opts:["Decoration","Defines code blocks","Speed","Optional"],ans:1,diff:"medium"},
-{q:"What is pip?",opts:["Editor","Package manager","Debugger","Compiler"],ans:1,diff:"hard"}
-],
-cpp:[
-{q:"Output in C++?",opts:["print()","console.log()","cout <<","echo"],ans:2,diff:"easy"},
-{q:"Main function?",opts:["void main()","int main()","function main()","start main()"],ans:1,diff:"easy"},
-{q:"Include header?",opts:["import iostream","#include <iostream>","use iostream","require iostream"],ans:1,diff:"easy"},
-{q:"Integer variable?",opts:["var x=5","int x=5;","integer x=5","x:int=5"],ans:1,diff:"easy"},
-{q:"Newline in C++?",opts:["\\t","\\n or endl","only \\n","/n"],ans:1,diff:"easy"},
-{q:"For loop?",opts:["for x in range(5):","for(int i=0;i<5;i++)","foreach(5)","loop(5)"],ans:1,diff:"medium"},
-{q:"Function returning nothing?",opts:["null","void","empty","none"],ans:1,diff:"medium"},
-{q:"What does cin do?",opts:["Output","Takes input","Comment","Include"],ans:1,diff:"medium"},
-{q:"Declare array?",opts:["array int a[5]","int a=[5]","int a[5];","list a(5)"],ans:2,diff:"medium"},
-{q:"What is a pointer?",opts:["Variable type","Stores memory address","Function","Array"],ans:1,diff:"hard"}
-],
-java:[
-{q:"Output in Java?",opts:["print()","console.log()","System.out.println()","cout <<"],ans:2,diff:"easy"},
-{q:"Main method?",opts:["void main()","public static void main(String[] args)","static main()","int main()"],ans:1,diff:"easy"},
-{q:"Integer variable?",opts:["var x=5","int x=5;","integer x=5","Int x=5"],ans:1,diff:"easy"},
-{q:"Java comment?",opts:["# comment","<!-- -->","// comment","** comment"],ans:2,diff:"easy"},
-{q:"Declare String?",opts:["string s='hi'","String s=\"hi\";","str s=hi","var s=hi"],ans:1,diff:"easy"},
-{q:"What is a class?",opts:["Variable type","Blueprint for objects","Function","Loop"],ans:1,diff:"medium"},
-{q:"Declare array?",opts:["int[] arr=new int[5];","array int[5]","int arr(5)","var arr=[5]"],ans:0,diff:"medium"},
-{q:"What does 'this' refer to?",opts:["Outer variable","Current object","Static method","Parent"],ans:1,diff:"medium"},
-{q:"Handle exceptions?",opts:["if-else","try-catch","loop","switch"],ans:1,diff:"hard"},
-{q:"When does finally run?",opts:["Only on exception","Only on success","Always","Never"],ans:2,diff:"hard"}
-],
-sql:[
-{q:"Select data?",opts:["GET * FROM","FETCH * FROM","SELECT * FROM","READ * FROM"],ans:2,diff:"easy"},
-{q:"Create table?",opts:["MAKE TABLE","BUILD TABLE","CREATE TABLE","NEW TABLE"],ans:2,diff:"easy"},
-{q:"Insert data?",opts:["ADD INTO","INSERT INTO","PUT INTO","PUSH INTO"],ans:1,diff:"easy"},
-{q:"Update data?",opts:["MODIFY","CHANGE","UPDATE","EDIT"],ans:2,diff:"easy"},
-{q:"Delete data?",opts:["REMOVE","DELETE","DROP","ERASE"],ans:1,diff:"easy"},
-{q:"WHERE is for?",opts:["Sort","Filter","Join","Count"],ans:1,diff:"medium"},
-{q:"ORDER BY does?",opts:["Filter","Sort results","Join","Group"],ans:1,diff:"medium"},
-{q:"COUNT() does?",opts:["Sum","Count rows","Average","Max"],ans:1,diff:"medium"},
-{q:"PRIMARY KEY?",opts:["Any column","Unique+NOT NULL identifier","Foreign ref","Encrypted"],ans:1,diff:"medium"},
-{q:"JOIN is for?",opts:["One table","Combine tables","Delete","Sort"],ans:1,diff:"hard"}
-],
-bash:[
-{q:"Show current directory?",opts:["cd","ls","pwd","dir"],ans:2,diff:"easy"},
-{q:"List files?",opts:["list","show","ls","dir"],ans:2,diff:"easy"},
-{q:"Create folder?",opts:["createdir","mkdir","newdir","makedir"],ans:1,diff:"easy"},
-{q:"View file content?",opts:["show","read","cat","open"],ans:2,diff:"easy"},
-{q:"Bash comment?",opts:["// comment","/* */","# comment","-- comment"],ans:2,diff:"easy"},
-{q:"Delete a file?",opts:["del","remove","rm","delete"],ans:2,diff:"medium"},
-{q:"Install in Termux?",opts:["apt install","pkg install","pip install","brew install"],ans:1,diff:"medium"},
-{q:"Make script executable?",opts:["chmod +x script.sh","exec script.sh","run script.sh","execute script.sh"],ans:0,diff:"medium"},
-{q:"Bash variable?",opts:["var x=5","int x=5","x=5 (no spaces)","let x=5"],ans:2,diff:"medium"},
-{q:"What is grep for?",opts:["Copy","Search text","Delete","Create folder"],ans:1,diff:"hard"}
-],
-logic:[
-{q:"2, 4, 6, 8, ? next?",opts:["9","10","11","12"],ans:1,diff:"easy"},
-{q:"Minutes in 3 hours?",opts:["120","160","180","200"],ans:2,diff:"easy"},
-{q:"Fibonacci: 1,1,2,3,5,8,?",opts:["11","13","10","12"],ans:1,diff:"easy"},
-{q:"10 questions/day for 7 days?",opts:["60","70","77","80"],ans:1,diff:"easy"},
-{q:"Sum of 1 to 100?",opts:["4950","5000","5050","5100"],ans:2,diff:"medium"},
-{q:"if(a>b) print a else b — a=5,b=10?",opts:["5","10","Error","Nothing"],ans:1,diff:"medium"},
-{q:"60km/h for 2 hours = distance?",opts:["100km","110km","120km","130km"],ans:2,diff:"medium"},
-{q:"x=5; y=x++; value of y?",opts:["4","5","6","Error"],ans:1,diff:"hard"},
-{q:"Binary 1010 in decimal?",opts:["8","10","12","14"],ans:1,diff:"hard"},
-{q:"Stack principle?",opts:["FIFO","LIFO","Random","Sorted"],ans:1,diff:"hard"}
-]};
-
-// ===== LESSON SYSTEM =====
-var CL=null,CS=0,TI=null;
-function openL(lang){CL=lang;CS=0;showPage('lesson');renderSec();}
-function renderSec(){
-  var L=LS[CL],S=L.sections[CS],total=L.sections.length;
-  document.getElementById('lh').textContent=L.badge;
-  document.getElementById('ls').textContent='Lesson '+(CS+1)+' of '+total;
-  var qb=QB[L.qb];
-  var sh=shuffleA(qb.slice());var sq=sh.slice(0,5);
-  var qH='<div style="padding:0 16px;margin-top:4px"><div style="font-size:0.62rem;font-family:\'JetBrains Mono\',monospace;color:var(--muted2);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px">QUICK QUIZ</div>';
-  sq.forEach(function(q,i){
-    var so=shuffleWI(q.opts);var ci=so.findIndex(function(o){return o.oi===q.ans;});
-    qH+='<div class="qw"><div class="qn">Q'+(i+1)+' <span class="diff '+q.diff+'">'+q.diff.toUpperCase()+'</span></div><div class="qq">'+q.q+'</div><div class="qo" id="qo'+i+'">';
-    so.forEach(function(op,j){qH+='<button class="ob2" onclick="chkA(this,'+(j===ci)+','+i+')">'+op.text+'</button>';});
-    qH+='</div><div class="qf" id="qf'+i+'"></div></div>';
-  });
-  qH+='</div>';
-  document.getElementById('lb').innerHTML='<div class="lc"><div class="sb" style="background:rgba(99,102,241,0.08);color:'+L.color+'">'+S.badge+'</div><div class="st">'+S.title+'</div>'+S.content+'</div>'+qH;
-  var prev=document.getElementById('npb'),next=document.getElementById('nnb');
-  prev.disabled=CS===0;
-  if(CS===total-1){next.textContent='Complete!';next.style.background='linear-gradient(135deg,#4ade80,#22d3ee)';}
-  else{next.textContent='Next →';next.style.background='linear-gradient(135deg,var(--accent),var(--accent2))';}
-  setTimeout(function(){
-    document.querySelectorAll('.ce').forEach(function(ed){
-      var id=ed.id;
-      if(id.startsWith('ed-js-'))rJS(parseInt(id.split('-')[2]));
-      else{var p=id.split('-');rHTML(p[1],parseInt(p[2]));}
-    });
-  },400);
-}
-function lNav(d){
-  var L=LS[CL],ns=CS+d;
-  if(ns<0)return;
-  if(ns>=L.sections.length){saveProg(CL,100);goHome();return;}
-  CS=ns;renderSec();window.scrollTo(0,0);
-}
-function chkA(btn,ok,qi){
-  var opts=document.querySelectorAll('#qo'+qi+' .ob2');opts.forEach(function(o){o.disabled=true;});
-  var fb=document.getElementById('qf'+qi);
-  if(ok){btn.classList.add('correct');fb.textContent='Correct! 🔥';fb.className='qf show ok';}
-  else{btn.classList.add('wrong');fb.textContent='Not quite!';fb.className='qf show fail';setTimeout(function(){opts.forEach(function(o){o.disabled=false;o.classList.remove('wrong','correct');});fb.className='qf';},1600);}
-}
-function rHTML(lang,idx){
-  var ed=document.getElementById('ed-'+lang+'-'+idx);
-  var pv=document.getElementById('pv-'+lang+'-'+idx);
-  if(!ed||!pv)return;
-  var doc=pv.contentDocument||pv.contentWindow.document;
-  doc.open();doc.write(ed.value);doc.close();
-  setTimeout(function(){try{pv.style.height=Math.max(70,doc.body.scrollHeight+16)+'px';}catch(e){}},300);
-}
-function rJS(idx){
-  var ed=document.getElementById('ed-js-'+idx);
-  var out=document.getElementById('oj-'+idx);
-  if(!ed||!out)return;
-  var logs=[];
-  var fc={log:function(){var args=Array.from(arguments);logs.push(args.map(function(x){return typeof x==='object'?JSON.stringify(x):String(x);}).join(' '));}};
-  try{new Function('console',ed.value)(fc);out.style.color='var(--green)';out.textContent=logs.join('\n')||'(No output)';}
-  catch(e){out.style.color='var(--red)';out.textContent='Error: '+e.message;}
-}
-
-// ===== AI TEST =====
-var TQ=[],UA={},aiTestQ=[];
-var GROQ='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';
-
-async function generateAIQs(){
-  var topics='HTML, CSS, JavaScript, Python, C++, Java, SQL, Bash, Logic';
-  var prompt='Generate exactly 25 unique multiple-choice coding questions. Topics: '+topics+'. Mix Easy(8), Medium(10), Hard(7). Each question has 4 options, ONE correct. Respond ONLY with JSON array, no markdown:\n[{"q":"question","opts":["A","B","C","D"],"ans":0,"diff":"easy","lang":"html"},...]';
-  var r=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+GROQ},body:JSON.stringify({model:'llama-3.3-70b-versatile',messages:[{role:'user',content:prompt}],max_tokens:3000,temperature:0.9})});
-  var data=await r.json();
-  var text=data.choices&&data.choices[0]?data.choices[0].message.content:'[]';
-  var clean=text.replace(/```json|```/g,'').trim();
-  return JSON.parse(clean);
-}
-
-async function startTest(){
-  showPage('test');
-  document.getElementById('tqs').innerHTML='<div class="test-loading"><span class="tl-icon spin">⚡</span><p>AI generating fresh questions...<br><span style="font-size:0.78rem;color:var(--muted)">Unique every time</span></p></div>';
-  UA={};
-  try{
-    aiTestQ=await generateAIQs();
-    if(!Array.isArray(aiTestQ)||aiTestQ.length<10)throw new Error('not enough');
-    TQ=aiTestQ.slice(0,25);
-  }catch(e){
-    var pool=[];
-    Object.keys(QB).forEach(function(l){QB[l].forEach(function(q){pool.push(Object.assign({},q,{lang:l}));});});
-    TQ=shuffleA(pool).slice(0,25);
-  }
-  renderTest();
-}
-
-function renderTest(){
-  var lc={html:'#f97316',css:'#3b82f6',js:'#fbbf24',python:'#4ade80',cpp:'#f472b6',java:'#f97316',sql:'#22d3ee',bash:'#a78bfa',logic:'#6366f1'};
-  var h='';
-  TQ.forEach(function(q,i){
-    var color=lc[q.lang]||'#6366f1';
-    h+='<div class="tq"><div class="tm"><span class="tn">Q'+(i+1)+' <span class="diff '+(q.diff||'medium')+'">'+(q.diff||'medium').toUpperCase()+'</span></span><span class="tl" style="background:'+color+'22;color:'+color+'">'+(q.lang||'logic').toUpperCase()+'</span></div><div class="tqq">'+q.q+'</div><div class="to">';
-    q.opts.forEach(function(op,j){h+='<button class="to2" id="to-'+i+'-'+j+'" onclick="selA('+i+','+j+')">'+op+'</button>';});
-    h+='</div></div>';
-  });
-  document.getElementById('tqs').innerHTML=h;
-  document.getElementById('tt').textContent=TQ.length;
-  updTS();
-}
-function selA(qi,oi){
-  if(UA[qi]!==undefined)document.getElementById('to-'+qi+'-'+UA[qi]).classList.remove('sel');
-  UA[qi]=oi;document.getElementById('to-'+qi+'-'+oi).classList.add('sel');updTS();
-}
-function updTS(){var a=Object.keys(UA).length;document.getElementById('ta').textContent=a;document.getElementById('tr2').textContent=TQ.length-a;}
-function submitTest(){showPage('checking');startTimer();}
-function startTimer(){
-  var t=60;var circ=document.getElementById('tCirc');var nEl=document.getElementById('tNum');var dEl=document.getElementById('dots');var dc=0;
-  circ.style.strokeDashoffset=0;
-  TI=setInterval(function(){
-    t--;nEl.textContent=t;circ.style.strokeDashoffset=339*(1-t/60);dc=(dc+1)%4;dEl.textContent='.'.repeat(dc+1);
-    if(t<=0){clearInterval(TI);showResultPage();}
-  },1000);
-}
-
-async function showResultPage(){
-  var tot=0;var lco={};var lto={};
-  TQ.forEach(function(q,i){
-    var l=q.lang||'logic';lto[l]=(lto[l]||0)+1;
-    if(UA[i]!==undefined&&UA[i]===q.ans){tot++;lco[l]=(lco[l]||0)+1;}
-  });
-  var pct=Math.round((tot/TQ.length)*100);
-  var g,em,gc;
-  if(pct>=90){g='A+ 🏆';em='🏆';gc='var(--green)';}
-  else if(pct>=75){g='A 🎉';em='🎉';gc='var(--accent2)';}
-  else if(pct>=60){g='B 👍';em='😊';gc='var(--yellow)';}
-  else if(pct>=40){g='C 📚';em='🤔';gc='var(--orange)';}
-  else{g='D — Keep Going!';em='💪';gc='var(--red)';}
-  document.getElementById('rEmoji').textContent=em;
-  document.getElementById('rScore').innerHTML='<span style="color:'+gc+'">'+tot+'</span><span style="color:var(--muted2);font-size:1.4rem">/'+TQ.length+'</span>';
-  document.getElementById('rGrade').textContent=g;
-  document.getElementById('rGrade').style.cssText='background:'+gc+'22;color:'+gc+';border:1px solid '+gc+'44';
-  var lc={html:'#f97316',css:'#3b82f6',js:'#fbbf24',python:'#4ade80',cpp:'#f472b6',java:'#f97316',sql:'#22d3ee',bash:'#a78bfa',logic:'#6366f1'};
-  var bH='';
-  Object.keys(lco).forEach(function(l){if(!lto[l])return;var p=Math.round((lco[l]/lto[l])*100);bH+='<div class="br"><div class="bl" style="color:'+(lc[l]||'#6366f1')+'">'+l.toUpperCase()+'</div><div class="bbw"><div class="bb" style="width:'+p+'%;background:'+(lc[l]||'#6366f1')+'"></div></div><div class="bsc">'+lco[l]+'/'+lto[l]+'</div></div>';});
-  document.getElementById('rBreak').innerHTML=bH;
-  var aH='';
-  TQ.forEach(function(q,i){
-    var ua=UA[i];var ok=ua!==undefined&&ua===q.ans;
-    aH+='<div class="ai2"><div class="aq">'+(ok?'✅':'❌')+' Q'+(i+1)+': '+q.q+'</div><div class="ar">'+(!ok?'<span class="ac wrong">Your: '+q.opts[ua||0]+'</span>':'')+'<span class="ac '+(ok?'correct':'right')+'">Correct: '+q.opts[q.ans]+'</span></div></div>';
-  });
-  document.getElementById('rAns').innerHTML=aH;
-  showPage('result');
-  if(UP){
-    UP.bestScore=Math.max(UP.bestScore||0,pct);UP.testCount=(UP.testCount||0)+1;
-    if(!UP.testHistory)UP.testHistory=[];
-    UP.testHistory.push({score:tot,pct:pct,grade:g.split(' ')[0],date:new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})});
-    if(UP.testHistory.length>10)UP.testHistory=UP.testHistory.slice(-10);
-    await saveUD();checkBadges();updHomeStats();
-  }
-  document.getElementById('aiFeedbackLoading').style.display='flex';
-  document.getElementById('aiFeedbackText').style.display='none';
-  getAIFeedback(tot,TQ.length,pct,lco,lto);
-  window._rt='Coding by Shoav — Test Result\nScore: '+tot+'/'+TQ.length+' ('+pct+'%)\nGrade: '+g;
-}
-
-async function getAIFeedback(score,total,pct,lco,lto){
-  var weak=Object.keys(lto).filter(function(l){return Math.round((lco[l]||0)/lto[l]*100)<50;}).join(', ')||'none';
-  var strong=Object.keys(lto).filter(function(l){return Math.round((lco[l]||0)/lto[l]*100)>=80;}).join(', ')||'none';
-  var prompt='You are an encouraging coding teacher. Student scored '+score+'/'+total+' ('+pct+'%). Strong: '+strong+'. Weak: '+weak+'. Write 3-4 sentences of personalized feedback. Be friendly and motivating. No markdown.';
-  try{
-    var r=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+GROQ},body:JSON.stringify({model:'llama-3.3-70b-versatile',messages:[{role:'user',content:prompt}],max_tokens:200,temperature:0.7})});
-    var data=await r.json();
-    var reply=data.choices&&data.choices[0]?data.choices[0].message.content:'Great effort! Keep practicing and you will improve!';
-    document.getElementById('aiFeedbackLoading').style.display='none';
-    document.getElementById('aiFeedbackText').style.display='block';
-    document.getElementById('aiFeedbackText').textContent=reply;
-  }catch(e){
-    document.getElementById('aiFeedbackLoading').style.display='none';
-    document.getElementById('aiFeedbackText').style.display='block';
-    document.getElementById('aiFeedbackText').textContent='Great effort! Keep practicing and you will keep improving. 🚀';
-  }
-}
-
-function copyRes(){navigator.clipboard&&navigator.clipboard.writeText(window._rt).then(function(){alert('Copied!');}).catch(function(){alert('Take a screenshot!');});}
-function retryT(){clearInterval(TI);startTest();}
-
-// ===== ASK AI =====
-var aiH=[];
-function useChip(msg){document.getElementById('aiIn').value=msg;sendAI();}
-function aiKD(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendAI();}}
-async function sendAI(){
-  var inp=document.getElementById('aiIn');var msg=inp.value.trim();
-  if(!msg)return;inp.value='';
-  addAIM('user',msg);aiH.push({role:'user',content:msg});
-  var tid=addTyping();
-  try{
-    var sp='You are an expert coding assistant. Help with HTML, CSS, JavaScript, Python, C++, Java, SQL, Bash, algorithms and all programming topics. Be concise, clear, use code examples. Format code in ```language blocks. Be friendly and encouraging.';
-    var r=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+GROQ},body:JSON.stringify({model:'llama-3.3-70b-versatile',messages:[{role:'system',content:sp}].concat(aiH.slice(-12)),max_tokens:800,temperature:0.7})});
-    var data=await r.json();
-    var reply=data.choices&&data.choices[0]?data.choices[0].message.content:'Something went wrong!';
-    removeTyping(tid);addAIM('bot',reply);aiH.push({role:'assistant',content:reply});
-  }catch(e){removeTyping(tid);addAIM('bot','Network error. Check internet connection.');}
-}
-function addAIM(role,text){
-  var m=document.getElementById('aiM');
-  var d=document.createElement('div');d.className='aimsg '+role;
-  var f=text.replace(/```(\w+)?\n?([\s\S]*?)```/g,function(_,lang,code){return '<button class="copy-code-btn" onclick="cpCode(this)">Copy</button><pre>'+code.trim()+'</pre>';}).replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
-  d.innerHTML='<div class="aib">'+f+'</div>';
-  m.appendChild(d);m.scrollTop=m.scrollHeight;
-}
-function cpCode(btn){var code=btn.nextElementSibling.textContent;navigator.clipboard&&navigator.clipboard.writeText(code).then(function(){btn.textContent='Copied!';setTimeout(function(){btn.textContent='Copy';},2000);});}
-function addTyping(){
-  var m=document.getElementById('aiM');var id='t'+Date.now();
-  var d=document.createElement('div');d.className='aimsg bot';d.id=id;
-  d.innerHTML='<div class="aib"><div class="aty"><span></span><span></span><span></span></div></div>';
-  m.appendChild(d);m.scrollTop=m.scrollHeight;return id;
-}
-function removeTyping(id){var el=document.getElementById(id);if(el)el.remove();}
-
-// ===== UTILS =====
-function shuffleA(arr){for(var i=arr.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=arr[i];arr[i]=arr[j];arr[j]=t;}return arr;}
-function shuffleWI(arr){return shuffleA(arr.map(function(text,oi){return {text:text,oi:oi};}));}
-</script>
-</body>
-</html>
+{q:"Why indentation required?",opts:["Decoration","Defines blocks","Speed","Optional"],ans:1,diff:"medium"},
+{q:"[x*2 for x in range(3)] gives?",opts:["[0,2,4]","[1,2,3]","[2,4,6]","[0,1,2]"],ans:2,diff:"hard"},
+{q:"__init__ is called when?",opts:["Function call","Object created","Program start","Import"],ans:1,diff:"hard"},
+{q:"pip is?",opts:["Editor","Package manager","Debugger","Compiler"],an
